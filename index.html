@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detroit Brew-ti-ful Coffee House | Family Owned. Female Owned. Black Owned.</title>
+<meta name="description" content="Detroit Brew-ti-ful Coffee House — family-owned, female-owned, Black-owned coffee house with 2 Detroit locations. Freshly brewed coffee, fresh baked goods, community.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brown:#5C3D2E; --brown-dark:#3E2718; --cream:#FFF8F0; --cream-dark:#F5E9DA;
+    --gold:#C9A227; --pink:#E8A0BF; --pink-light:#FCE4EE; --teal:#2A7F6F;
+    --text:#2D2D2D; --muted:#6B5B4F; --white:#fff; --shadow:0 4px 20px rgba(92,61,46,.12);
+    --shadow-lg:0 8px 32px rgba(92,61,46,.16);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--text);background:var(--cream);line-height:1.6}
+  h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;color:var(--brown);line-height:1.25}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+  .section{padding:64px 0}
+  .section-alt{background:var(--cream-dark)}
+  .section-dark{background:var(--brown-dark);color:var(--cream)}
+  .section-dark h2,.section-dark h3{color:var(--cream)}
+  .kicker{font-size:.82rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+  .section-dark .kicker{color:var(--pink)}
+  .section h2{font-size:2rem;margin-bottom:12px}
+  .section .lede{font-size:1.08rem;color:var(--muted);max-width:640px;margin-bottom:36px}
+  .section-dark .lede{color:#D8C9BC}
+
+  /* Top bar */
+  .topbar{background:var(--brown-dark);color:#E8D9C8;font-size:.83rem;padding:8px 0}
+  .topbar .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .topbar a:hover{color:var(--gold)}
+  .open-pill{display:inline-flex;align-items:center;gap:6px;font-weight:600}
+  .open-pill .dot{width:8px;height:8px;border-radius:50%;background:#4CAF50;display:inline-block}
+  .open-pill.closed .dot{background:#E57373}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,248,240,.96);backdrop-filter:blur(8px);border-bottom:1px solid #EAD9C4}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}
+  .logo{display:flex;align-items:center;gap:12px}
+  .logo-mark{width:48px;height:48px;border-radius:50%;background:var(--brown);color:var(--cream);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:800;font-size:1.15rem;flex-shrink:0}
+  .logo-text{line-height:1.15}
+  .logo-text strong{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--brown);display:block}
+  .logo-text span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  nav{display:flex;gap:26px;font-weight:600;font-size:.95rem}
+  nav a:hover{color:var(--gold)}
+  .header-cta{display:flex;gap:10px;align-items:center}
+  .btn{display:inline-block;padding:12px 24px;border-radius:999px;font-weight:700;font-size:.95rem;transition:.2s;cursor:pointer;border:none;text-align:center}
+  .btn-gold{background:var(--gold);color:#fff}
+  .btn-gold:hover{background:#B08D1E;transform:translateY(-1px)}
+  .btn-brown{background:var(--brown);color:#fff}
+  .btn-brown:hover{background:var(--brown-dark);transform:translateY(-1px)}
+  .btn-outline{border:2px solid var(--brown);color:var(--brown);background:transparent}
+  .btn-outline:hover{background:var(--brown);color:#fff}
+  .btn-pink{background:var(--pink);color:var(--brown-dark)}
+  .btn-pink:hover{background:#D98BAE}
+  .btn-sm{padding:9px 18px;font-size:.88rem}
+  @media(max-width:900px){nav{display:none}}
+
+  /* Hero */
+  .hero{background:linear-gradient(120deg,rgba(62,39,24,.88),rgba(92,61,46,.72)),url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1600&q=80') center/cover no-repeat;color:#fff;padding:96px 0 80px}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.4rem);color:#fff;margin-bottom:8px}
+  .hero .tagline{font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.5vw,1.5rem);color:var(--pink);margin-bottom:18px}
+  .hero p{font-size:1.08rem;color:#F0E2D2;max-width:620px;margin-bottom:28px}
+  .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
+  .hero-stats{display:flex;gap:36px;flex-wrap:wrap}
+  .hero-stats div strong{display:block;font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--gold)}
+  .hero-stats div span{font-size:.85rem;color:#D8C9BC}
+
+  /* Cards grid */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+  .card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:.2s}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+  .card img{width:100%;height:200px;object-fit:cover}
+  .card-body{padding:20px}
+  .card-body h3{font-size:1.2rem;margin-bottom:6px}
+  .card-body p{font-size:.94rem;color:var(--muted);margin-bottom:12px}
+  .price{font-weight:700;color:var(--brown);font-size:1.05rem}
+  .tag{display:inline-block;background:var(--pink-light);color:var(--brown);font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:10px}
+  .tag-gold{background:#FDF3D0;color:#8A6D0B}
+
+  /* Story */
+  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+  @media(max-width:800px){.story-grid{grid-template-columns:1fr}}
+  .story-img{border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg)}
+  .story-img img{width:100%;height:100%;object-fit:cover;min-height:340px}
+  .story-text p{margin-bottom:16px;color:var(--muted)}
+  .story-text blockquote{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--brown);border-left:4px solid var(--gold);padding-left:18px;margin:24px 0;font-style:italic}
+
+  /* Locations */
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  @media(max-width:800px){.loc-grid{grid-template-columns:1fr}}
+  .loc-card{background:#fff;border-radius:18px;padding:30px;box-shadow:var(--shadow)}
+  .loc-card h3{font-size:1.35rem;margin-bottom:4px}
+  .loc-card .loc-badge{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  .loc-card .loc-badge.new{color:var(--teal)}
+  .loc-card p{color:var(--muted);font-size:.95rem;margin-bottom:8px}
+  .loc-card .hours{margin:16px 0;padding:14px;background:var(--cream);border-radius:10px;font-size:.92rem}
+  .loc-card .hours div{display:flex;justify-content:space-between;padding:3px 0}
+  .loc-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+
+  /* Events */
+  .events-band{background:linear-gradient(120deg,var(--brown),var(--brown-dark));border-radius:20px;padding:48px;color:#fff;display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center;overflow:hidden}
+  @media(max-width:800px){.events-band{grid-template-columns:1fr}}
+  .events-band h2{color:#fff}
+  .events-band p{color:#E8D9C8;margin-bottom:20px}
+  .events-band ul{list-style:none;margin-bottom:24px}
+  .events-band li{padding:6px 0;color:#F0E2D2}
+  .events-band li::before{content:"✓ ";color:var(--gold);font-weight:700}
+  .events-band img{width:100%;height:260px;object-fit:cover;border-radius:14px}
+
+  /* Reviews */
+  .review-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+  .review{background:#fff;border-radius:16px;padding:26px;box-shadow:var(--shadow)}
+  .stars{color:var(--gold);font-size:1.1rem;letter-spacing:2px;margin-bottom:10px}
+  .review p{font-size:.95rem;color:var(--muted);margin-bottom:14px;font-style:italic}
+  .review .who{font-weight:700;font-size:.9rem}
+  .review .who span{display:block;font-weight:500;color:var(--muted);font-size:.82rem}
+
+  /* Visit / contact */
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  @media(max-width:800px){.visit-grid{grid-template-columns:1fr}}
+  .visit-card{background:#fff;border-radius:16px;padding:28px;box-shadow:var(--shadow)}
+  .visit-card h3{margin-bottom:14px}
+  .visit-card p{color:var(--muted);font-size:.95rem;margin-bottom:8px}
+  .social-row{display:flex;gap:12px;margin-top:16px}
+  .social-row a{background:var(--cream-dark);padding:10px 18px;border-radius:999px;font-weight:600;font-size:.9rem}
+  .social-row a:hover{background:var(--gold);color:#fff}
+
+  /* CTA band */
+  .cta-band{background:var(--gold);text-align:center;padding:56px 20px}
+  .cta-band h2{color:#fff;font-size:2rem;margin-bottom:10px}
+  .cta-band p{color:#FFF8E1;margin-bottom:24px;font-size:1.05rem}
+
+  /* Footer */
+  footer{background:var(--brown-dark);color:#C9B8A6;padding:48px 0 32px;font-size:.9rem}
+  footer .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:28px}
+  @media(max-width:700px){footer .foot-grid{grid-template-columns:1fr}}
+  footer h4{color:#fff;margin-bottom:12px;font-size:1rem}
+  footer a{display:block;padding:3px 0}
+  footer a:hover{color:var(--gold)}
+  .foot-note{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;font-size:.82rem;color:#9A8878}
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="wrap">
+    <span>☕ Two Detroit Locations — Plymouth Rd &amp; McNichols Rd</span>
+    <span class="open-pill" id="openPill"><span class="dot"></span><span id="openText">Checking hours…</span></span>
+  </div>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="wrap header-inner">
+    <a class="logo" href="#">
+      <div class="logo-mark">B²</div>
+      <div class="logo-text">
+        <strong>Detroit Brew-ti-ful</strong>
+        <span>Coffee House</span>
+      </div>
+    </a>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#food">Food</a>
+      <a href="#story">Our Story</a>
+      <a href="#locations">Locations</a>
+      <a href="#events">Events</a>
+      <a href="#visit">Visit Us</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-gold btn-sm" href="https://www.doordash.com" target="_blank" rel="noopener">Order on DoorDash</a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Detroit, Michigan</div>
+    <h1>Family Owned. Female Owned.<br>Black Owned.</h1>
+    <div class="tagline">Freshly Brewed Coffee • Fresh Baked Goods • Community</div>
+    <p>More than just a place to grab a cup of joe — Detroit Brew-ti-ful is a haven for those who appreciate the artistry and craftsmanship behind every brew. Come for the coffee, stay for the community.</p>
+    <div class="hero-btns">
+      <a class="btn btn-gold" href="#menu">View Menu</a>
+      <a class="btn btn-outline" style="border-color:#fff;color:#fff" href="https://www.doordash.com" target="_blank" rel="noopener">Order on DoorDash — $0 Delivery Fee</a>
+    </div>
+    <div class="hero-stats">
+      <div><strong>2</strong><span>Detroit Locations</span></div>
+      <div><strong>2024</strong><span>Serving Detroit Since</span></div>
+      <div><strong>100%</strong><span>Black Owned</span></div>
+      <div><strong>★ 4.8</strong><span>Customer Loved</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured drinks -->
+<section class="section" id="menu">
+  <div class="wrap">
+    <div class="kicker">Signature Sips</div>
+    <h2>Featured Drinks</h2>
+    <p class="lede">From our bold house brew to shimmering lemonades and creamy matchas — every drink is made fresh, made with love, and made Detroit.</p>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80" alt="Detroit Brewtiful Brewed Coffee">
+        <div class="card-body">
+          <span class="tag tag-gold">House Favorite</span>
+          <h3>Detroit Brewtiful Brewed Coffee</h3>
+          <p>Bold. Smooth. Unapologetically Detroit. Roasted cocoa, toasted caramel, and nutty warmth in every cup.</p>
+          <span class="price">$6.50</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=800&q=80" alt="Iced Brown Sugar Cinnamon Latte">
+        <div class="card-body">
+          <span class="tag">Most Popular</span>
+          <h3>Iced Brown Sugar Cinnamon Latte</h3>
+          <p>Sweet, spicy, creamy — a must-try. Brown sugar and cinnamon folded into smooth espresso and cold milk.</p>
+          <span class="price">$6.00</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1536256263950-7da7c2f74d0a?w=800&q=80" alt="Strawberry Matcha Latte">
+        <div class="card-body">
+          <span class="tag">Fresh &amp; Vibrant</span>
+          <h3>Strawberry Matcha Latte</h3>
+          <p>Fresh strawberry meets ceremonial matcha. Sweet, earthy, and beautiful in the glass.</p>
+          <span class="price">$6.50</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=800&q=80" alt="Lavender Lemonade">
+        <div class="card-body">
+          <span class="tag">House-Made</span>
+          <h3>Lavender Lemonade</h3>
+          <p>Floral, refreshing, house-made. Calming lavender meets bright, tangy lemonade.</p>
+          <span class="price">$5.50</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&q=80" alt="Shimmer Lemonade">
+        <div class="card-body">
+          <span class="tag">Instagram-Worthy</span>
+          <h3>Shimmer Lemonade</h3>
+          <p>Sparkling, sweet, and shimmering. The drink everyone photographs before they sip.</p>
+          <span class="price">$5.50</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1502741224143-90386d7f8c82?w=800&q=80" alt="Peach Strawberry Smoothie">
+        <div class="card-body">
+          <span class="tag">Fresh Fruit</span>
+          <h3>Peach Strawberry Smoothie</h3>
+          <p>Fresh fruit blended to perfection. No shortcuts, no syrups — just real peaches and strawberries.</p>
+          <span class="price">$7.00</span>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:28px;color:var(--muted);font-size:.95rem">Also pouring: Boba teas, Frappes, Espresso drinks, Hot Teas, Matcha, and seasonal specials. Ask your barista what is new this week.</p>
+  </div>
+</section>
+
+<!-- Food menu -->
+<section class="section section-alt" id="food">
+  <div class="wrap">
+    <div class="kicker">Fresh From the Kitchen</div>
+    <h2>Food Menu</h2>
+    <p class="lede">Baked fresh daily. Family recipes. Real ingredients. Pair any of these with your favorite brew.</p>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=800&q=80" alt="Chicken Salad Croissant">
+        <div class="card-body">
+          <span class="tag tag-gold">Lunch Favorite</span>
+          <h3>Chicken Salad Croissant</h3>
+          <p>House-made chicken salad on a flaky, buttery croissant. Light, satisfying, and made to order.</p>
+          <span class="price">$9.50</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80" alt="Deluxe Croissant">
+        <div class="card-body">
+          <span class="tag">Baked Daily</span>
+          <h3>Deluxe Croissant</h3>
+          <p>Buttery, flaky, baked fresh daily. The perfect companion to your morning coffee.</p>
+          <span class="price">$7.00</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=800&q=80" alt="Mimi's Pound Cake">
+        <div class="card-body">
+          <span class="tag">Family Recipe</span>
+          <h3>Mimi's Pound Cake</h3>
+          <p>A family recipe, dense and buttery. The slice everyone talks about — and comes back for.</p>
+          <span class="price">$4.50</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=800&q=80" alt="Cinnamon Roll">
+        <div class="card-body">
+          <span class="tag">Warm &amp; Gooey</span>
+          <h3>Cinnamon Roll</h3>
+          <p>Warm, gooey, with cream cheese frosting. Best enjoyed fresh out of the oven.</p>
+          <span class="price">$4.00</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=800&q=80" alt="B-pops Cake Pops">
+        <div class="card-body">
+          <span class="tag">Sweet Treat</span>
+          <h3>B-pops</h3>
+          <p>Cake pops in assorted flavors. A little sweet, a little fun — perfect for kids and grown-ups alike.</p>
+          <span class="price">$3.00</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&q=80" alt="Soup of the Day">
+        <div class="card-body">
+          <span class="tag">Ask Your Barista</span>
+          <h3>Soup of the Day</h3>
+          <p>Ask your barista what is simmering. Hearty, homemade, and always changing with the season.</p>
+          <span class="price">$6.00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our story -->
+<section class="section" id="story">
+  <div class="wrap story-grid">
+    <div class="story-img">
+      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1000&q=80" alt="Inside Detroit Brew-ti-ful Coffee House">
+    </div>
+    <div class="story-text">
+      <div class="kicker">Our Story</div>
+      <h2>A Mother-Daughter Dream, Brewed in Detroit</h2>
+      <p>Detroit Brew-ti-ful Coffee House was founded by <strong>Beverly Beal Sr. and Beverly Beal Jr.</strong> — a mother-daughter team with deep roots in Detroit and a shared love of coffee, community, and good food.</p>
+      <p>What started as one cozy shop on Plymouth Road has grown into two Detroit locations, a loyal community of regulars, and a space where neighbors become friends and friends become family.</p>
+      <blockquote>"More than just a place to grab a cup of joe — it's a haven for those who appreciate the artistry and craftsmanship behind every brew."</blockquote>
+      <p>Every drink is crafted with care. Every pastry is baked fresh. Every customer is welcomed like family. That is the Brew-ti-ful way.</p>
+      <a class="btn btn-brown" href="#locations">Visit Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- Locations -->
+<section class="section section-alt" id="locations">
+  <div class="wrap">
+    <div class="kicker">Find Us</div>
+    <h2>Two Detroit Locations</h2>
+    <p class="lede">One on Plymouth Road, one on McNichols. Same warm welcome, same great coffee, same community spirit.</p>
+    <div class="loc-grid">
+      <div class="loc-card">
+        <div class="loc-badge">★ Original Location</div>
+        <h3>Plymouth Road</h3>
+        <p>📍 20438 Plymouth Rd, Detroit, MI 48228</p>
+        <p>📞 <a href="tel:+13133977667">(313) 397-7667</a></p>
+        <div class="hours">
+          <div><span>Monday – Friday</span><strong>7:00 AM – 6:00 PM</strong></div>
+          <div><span>Saturday</span><strong>8:00 AM – 6:00 PM</strong></div>
+          <div><span>Sunday</span><strong>Closed</strong></div>
+        </div>
+        <p><span class="open-pill" id="openPill1"><span class="dot"></span><span id="openText1">Checking…</span></span></p>
+        <div class="loc-links">
+          <a class="btn btn-brown btn-sm" href="https://maps.google.com/?q=20438+Plymouth+Rd+Detroit+MI+48228" target="_blank" rel="noopener">Get Directions</a>
+          <a class="btn btn-outline btn-sm" href="tel:+13133977667">Call</a>
+        </div>
+      </div>
+      <div class="loc-card">
+        <div class="loc-badge new">✦ New Location — Opened March 2026</div>
+        <h3>McNichols Road</h3>
+        <p>📍 14101 W McNichols Rd, Detroit, MI</p>
+        <p>📞 <a href="tel:+13136464986">(313) 646-4986</a></p>
+        <div class="hours">
+          <div><span>Monday – Friday</span><strong>7:00 AM – 6:00 PM</strong></div>
+          <div><span>Saturday</span><strong>8:00 AM – 6:00 PM</strong></div>
+          <div><span>Sunday</span><strong>Closed</strong></div>
+        </div>
+        <p><span class="open-pill" id="openPill2"><span class="dot"></span><span id="openText2">Checking…</span></span></p>
+        <div class="loc-links">
+          <a class="btn btn-brown btn-sm" href="https://maps.google.com/?q=14101+W+McNichols+Rd+Detroit+MI" target="_blank" rel="noopener">Get Directions</a>
+          <a class="btn btn-outline btn-sm" href="tel:+13136464986">Call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Events -->
+<section class="section" id="events">
+  <div class="wrap">
+    <div class="events-band">
+      <div>
+        <div class="kicker">Host With Us</div>
+        <h2>Plan Your Event With Us</h2>
+        <p>Looking for a cozy, welcoming space for your next gathering? Our coffee house is available for private events — with great coffee and food to match.</p>
+        <ul>
+          <li>Business meetings &amp; team gatherings</li>
+          <li>Birthday parties &amp; celebrations</li>
+          <li>Community events &amp; workshops</li>
+          <li>Book clubs, study groups &amp; more</li>
+        </ul>
+        <a class="btn btn-gold" href="mailto:brewtiful20438@gmail.com?subject=Event%20Booking%20Inquiry">Book Your Event</a>
+      </div>
+      <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=900&q=80" alt="Cozy coffee house event space">
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="section section-alt" id="reviews">
+  <div class="wrap">
+    <div class="kicker">What Detroit Says</div>
+    <h2>Reviews From Our Community</h2>
+    <p class="lede">Real words from real regulars. Come see why Detroit keeps coming back.</p>
+    <div class="review-grid">
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"The Iced Brown Sugar Cinnamon Latte is my daily go-to. The staff knows my order by now, and it always feels like coming home."</p>
+        <div class="who">Keisha M.<span>Regular since 2024</span></div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Mimi's Pound Cake is unreal. Dense, buttery, perfect with a cup of their house brew. I bring friends here just to try it."</p>
+        <div class="who">Marcus T.<span>Plymouth Rd location</span></div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Beautiful space, warm people, and the best matcha latte in the city. The new McNichols location is just as welcoming as the original."</p>
+        <div class="who">Denise R.<span>McNichols Rd location</span></div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Hosted my daughter's birthday here and the team went above and beyond. Great coffee, great food, great energy. Highly recommend."</p>
+        <div class="who">Angela W.<span>Event guest</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Visit us -->
+<section class="section" id="visit">
+  <div class="wrap">
+    <div class="kicker">Come Say Hi</div>
+    <h2>Visit Us</h2>
+    <div class="visit-grid">
+      <div class="visit-card">
+        <h3>Get In Touch</h3>
+        <p><strong>Email:</strong> <a href="mailto:brewtiful20438@gmail.com">brewtiful20438@gmail.com</a></p>
+        <p><strong>Plymouth Rd:</strong> <a href="tel:+13133977667">(313) 397-7667</a></p>
+        <p><strong>McNichols Rd:</strong> <a href="tel:+13136464986">(313) 646-4986</a></p>
+        <p><strong>Hours:</strong> Mon–Fri 7 AM–6 PM, Sat 8 AM–6 PM, Sun Closed</p>
+        <p><strong>Delivery:</strong> Available on DoorDash with $0 delivery fee</p>
+        <div class="social-row">
+          <a href="https://www.instagram.com/detroitbrewtiful" target="_blank" rel="noopener">📷 @detroitbrewtiful</a>
+          <a href="https://www.doordash.com" target="_blank" rel="noopener">🛵 Order on DoorDash</a>
+        </div>
+      </div>
+      <div class="visit-card">
+        <h3>Stay Connected</h3>
+        <p>Follow us on Instagram for new drinks, seasonal specials, event announcements, and a peek behind the counter.</p>
+        <p>Tag us in your photos — we love seeing your Brew-ti-ful moments!</p>
+        <p style="margin-top:16px"><strong>#DetroitBrewtiful</strong> &nbsp; <strong>#BrewedInDetroit</strong></p>
+        <a class="btn btn-pink" style="margin-top:12px" href="https://www.instagram.com/detroitbrewtiful" target="_blank" rel="noopener">Follow @detroitbrewtiful</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA band -->
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Your Table Is Waiting</h2>
+    <p>Stop by either location, order on DoorDash, or book the space for your next event. We cannot wait to serve you.</p>
+    <a class="btn btn-brown" href="#locations">Find Your Location</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Detroit Brew-ti-ful Coffee House</h4>
+        <p>Family Owned. Female Owned. Black Owned.<br>Freshly brewed coffee, fresh baked goods, and community — in the heart of Detroit.</p>
+      </div>
+      <div>
+        <h4>Locations</h4>
+        <a href="https://maps.google.com/?q=20438+Plymouth+Rd+Detroit+MI+48228" target="_blank" rel="noopener">20438 Plymouth Rd, Detroit, MI 48228</a>
+        <a href="https://maps.google.com/?q=14101+W+McNichols+Rd+Detroit+MI" target="_blank" rel="noopener">14101 W McNichols Rd, Detroit, MI</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+13133977667">(313) 397-7667 — Plymouth</a>
+        <a href="tel:+13136464986">(313) 646-4986 — McNichols</a>
+        <a href="mailto:brewtiful20438@gmail.com">brewtiful20438@gmail.com</a>
+        <a href="https://www.instagram.com/detroitbrewtiful" target="_blank" rel="noopener">@detroitbrewtiful</a>
+      </div>
+    </div>
+    <div class="foot-note">
+      <p>Demo redesign by Lexis Sapphire Studio. This is a concept website created to demonstrate a modern redesign. Not affiliated with Detroit Brew-ti-ful Coffee House. Photos: Unsplash. Menu prices shown are representative and based on publicly listed DoorDash prices.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Live open/closed indicator
+// Hours: Mon-Fri 7 AM - 6 PM, Sat 8 AM - 6 PM, Sun closed
+function getStatus(){
+  var now = new Date();
+  var day = now.getDay(); // 0 Sun, 1 Mon ... 6 Sat
+  var mins = now.getHours()*60 + now.getMinutes();
+  var open, close, dayName;
+  if(day === 0){
+    return {open:false, text:"Closed today (Sunday) — opens Monday at 7:00 AM"};
+  } else if(day === 6){
+    open = 8*60; close = 18*60; dayName = "Saturday";
+  } else {
+    open = 7*60; close = 18*60;
+    dayName = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][day];
+  }
+  if(mins >= open && mins < close){
+    var closeH = Math.floor(close/60);
+    var closeM = close%60;
+    var closeStr = (closeH > 12 ? closeH-12 : closeH) + ":" + (closeM<10?"0":"") + closeM + " PM";
+    return {open:true, text:"Open now — closes at " + closeStr};
+  } else if(mins < open){
+    var openH = Math.floor(open/60);
+    var openStr = (openH > 12 ? openH-12 : openH) + ":00 AM";
+    return {open:false, text:"Closed — opens today at " + openStr};
+  } else {
+    var nextDay = day === 6 ? "Monday" : ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][(day+1)%7];
+    var nextOpen = (day === 6 || day === 0) ? "7:00 AM" : (day+1 === 6 ? "8:00 AM" : "7:00 AM");
+    if(day === 5) nextOpen = "8:00 AM"; // Saturday opens at 8
+    return {open:false, text:"Closed — opens " + nextDay + " at " + nextOpen};
+  }
+}
+function updatePills(){
+  var s = getStatus();
+  [["openPill","openText"],["openPill1","openText1"],["openPill2","openText2"]].forEach(function(pair){
+    var pill = document.getElementById(pair[0]);
+    var txt = document.getElementById(pair[1]);
+    if(pill && txt){
+      txt.textContent = s.text;
+      pill.classList.toggle("closed", !s.open);
+    }
+  });
+}
+updatePills();
+setInterval(updatePills, 60000);
+</script>
+</body>
+</html>
