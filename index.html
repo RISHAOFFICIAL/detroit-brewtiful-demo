@@ -39,18 +39,15 @@
   /* ---------- header ---------- */
   header{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:2px solid var(--ink)}
   header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:12px;padding-bottom:12px;gap:16px}
-  .brand{display:flex;align-items:center;gap:12px}
-  .brand img{height:46px;width:auto}
-  .brand .brand-name{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.25rem;line-height:1;letter-spacing:-.02em}
-  .brand .brand-name span{display:block;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--tang);margin-top:3px}
+  .brand{display:flex;align-items:center}
+  .brand img{height:56px;width:auto}
   nav{display:flex;gap:22px;align-items:center;font-weight:600;font-size:.95rem}
   nav a:hover{color:var(--tang)}
   nav .nav-cta{background:var(--ink);color:var(--cream);padding:9px 18px;border-radius:100px;font-weight:700}
   nav .nav-cta:hover{background:var(--tang);color:#fff}
   @media(max-width:760px){
     nav a:not(.nav-cta){display:none}
-    .brand img{height:38px}
-    .brand .brand-name{font-size:1.05rem}
+    .brand img{height:44px}
   }
 
   /* ---------- hero ---------- */
@@ -274,8 +271,7 @@
 <header>
   <div class="wrap">
     <a class="brand" href="#">
-      <img src="images/logo-v2.png" alt="Detroit Brew-ti-ful Coffee House logo">
-      <span class="brand-name">Detroit Brew-ti-ful<span>Coffee House</span></span>
+      <img src="images/logo-v2.png" alt="Detroit Brew-ti-ful Coffee House">
     </a>
     <nav>
       <a href="#menu">Menu</a>
