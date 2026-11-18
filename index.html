@@ -4,327 +4,343 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Detroit Brew-ti-ful Coffee House | Two Detroit Locations</title>
-<meta name="description" content="Detroit Brew-ti-ful Coffee House — family-owned, female-owned, Black-owned. Fresh coffee, fresh baked goods, and community at two Detroit locations.">
+<meta name="description" content="Detroit Brew-ti-ful Coffee House. Mother-daughter owned, two Detroit locations, Mimi's Pound Cake, Drinks of the Month, and a room full of community.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --espresso:#2B1D14; --coffee:#4A2F1D; --cream:#FAF3EB; --paper:#F3E9DC;
-    --rust:#C25E3A; --rust-dark:#A84E2E; --sage:#6B7C5A; --ink:#2B1D14;
-    --muted:#7A6A5A; --line:#DDD0BE; --white:#fff;
+    --ink:#211D18; --ink-soft:#3A332A;
+    --cream:#FBF3E6; --cream-deep:#F3E7D3;
+    --sage:#6E7F5E; --sage-deep:#46543A; --sage-soft:#E4E8DC;
+    --tang:#E4572E; --tang-deep:#C7431F;
+    --blush:#F3D9CF;
+    --line:rgba(33,29,24,.16);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:'DM Sans',system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--cream);line-height:1.65;font-size:16px}
-  h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:700;color:var(--espresso);line-height:1.15}
+  body{font-family:'Instrument Sans',system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.display{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;line-height:.95;letter-spacing:-.02em}
   a{color:inherit;text-decoration:none}
   img{max-width:100%;display:block}
-  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  ::selection{background:var(--tang);color:#fff}
 
-  /* Top strip */
-  .strip{background:var(--espresso);color:#D8C7B5;font-size:.85rem;padding:9px 0;text-align:center}
-  .strip a{color:#F0E2D2;text-decoration:underline;text-underline-offset:2px}
-  .strip .dot-open{display:inline-block;width:7px;height:7px;border-radius:50%;background:#7FB069;margin-right:5px;vertical-align:middle}
-  .strip .dot-closed{display:inline-block;width:7px;height:7px;border-radius:50%;background:#D97B6C;margin-right:5px;vertical-align:middle}
+  /* ---------- top bar ---------- */
+  .topbar{background:var(--ink);color:#EDE3D3;font-size:.82rem;padding:10px 0}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+  .topbar .status{display:flex;align-items:center;gap:7px;font-weight:600}
+  .dot{width:8px;height:8px;border-radius:50%;background:#8FC97F;flex:none}
+  .dot.closed{background:#E87A5D}
+  .topbar .links{display:flex;gap:18px;flex-wrap:wrap}
+  .topbar .links a{text-decoration:underline;text-underline-offset:3px;font-weight:600}
+  .topbar .links a:hover{color:#fff}
 
-  /* Masthead */
-  .masthead{padding:28px 0 0;text-align:center;border-bottom:1px solid var(--line)}
-  .masthead .est{font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-  .masthead h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:900;letter-spacing:-.01em;margin-bottom:2px}
-  .masthead h1 em{font-style:normal;color:var(--rust)}
-  .masthead .sub{font-size:1.05rem;color:var(--muted);margin-bottom:20px}
-  .masthead .sub strong{color:var(--espresso)}
-  .masthead nav{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;padding:14px 0;border-top:1px solid var(--line);font-weight:500;font-size:.95rem}
-  .masthead nav a:hover{color:var(--rust)}
-  .masthead nav a.cta{color:var(--rust);font-weight:700}
+  /* ---------- header ---------- */
+  header{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:2px solid var(--ink)}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:12px;padding-bottom:12px;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{height:46px;width:auto}
+  .brand .brand-name{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.25rem;line-height:1;letter-spacing:-.02em}
+  .brand .brand-name span{display:block;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--tang);margin-top:3px}
+  nav{display:flex;gap:22px;align-items:center;font-weight:600;font-size:.95rem}
+  nav a:hover{color:var(--tang)}
+  nav .nav-cta{background:var(--ink);color:var(--cream);padding:9px 18px;border-radius:100px;font-weight:700}
+  nav .nav-cta:hover{background:var(--tang);color:#fff}
+  @media(max-width:760px){
+    nav a:not(.nav-cta){display:none}
+    .brand img{height:38px}
+    .brand .brand-name{font-size:1.05rem}
+  }
 
-  /* Hero photo */
-  .hero-photo{margin:0 auto;max-width:1100px;padding:24px 24px 0}
-  .hero-photo img{width:100%;height:420px;object-fit:cover;border-radius:4px}
-  .hero-photo figcaption{font-size:.85rem;color:var(--muted);margin-top:8px;font-style:italic}
+  /* ---------- hero ---------- */
+  .hero{position:relative;background:var(--ink);color:var(--cream);overflow:hidden}
+  .hero-img{position:absolute;inset:0}
+  .hero-img img{width:100%;height:100%;object-fit:cover;opacity:.62}
+  .hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(33,29,24,.92) 0%,rgba(33,29,24,.35) 55%,rgba(33,29,24,.25) 100%)}
+  .hero .wrap{position:relative;z-index:2;padding-top:110px;padding-bottom:56px}
+  .hero .eyebrow{font-weight:700;font-size:.85rem;letter-spacing:.24em;text-transform:uppercase;color:#F5CDBE;margin-bottom:18px}
+  .hero h1{font-size:clamp(3.4rem,11vw,8.2rem);text-transform:uppercase}
+  .hero h1 .outline{color:transparent;-webkit-text-stroke:2.5px var(--cream);display:block}
+  .hero h1 .tang{color:var(--tang)}
+  .hero .lede{font-size:clamp(1.05rem,2.4vw,1.35rem);max-width:620px;margin-top:22px;line-height:1.5;color:#F0E6D6}
+  .hero .lede strong{color:#fff}
+  .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+  .btn{display:inline-block;padding:15px 30px;border-radius:100px;font-weight:700;font-size:1rem;transition:.15s}
+  .btn-tang{background:var(--tang);color:#fff}
+  .btn-tang:hover{background:var(--tang-deep)}
+  .btn-ghost{border:2px solid var(--cream);color:var(--cream)}
+  .btn-ghost:hover{background:var(--cream);color:var(--ink)}
+  .hero-meta{display:flex;gap:26px;flex-wrap:wrap;margin-top:36px;font-size:.92rem;font-weight:600;color:#D8CBB6}
+  .hero-meta span b{color:#fff}
 
-  /* Intro */
-  .intro{padding:48px 0 16px;text-align:center;max-width:680px;margin:0 auto}
-  .intro h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:14px}
-  .intro p{color:var(--muted);font-size:1.05rem}
+  /* ---------- marquee ---------- */
+  .marquee{background:var(--tang);color:#fff;overflow:hidden;padding:14px 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+  .marquee-track{display:flex;gap:0;width:max-content;animation:scroll 26s linear infinite}
+  .marquee-track span{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap;padding:0 14px}
+  .marquee-track span i{font-style:normal;color:#FFD9CC;padding-left:28px}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-  /* Two-column editorial */
-  .editorial{display:grid;grid-template-columns:1.5fr 1fr;gap:56px;padding:48px 0}
-  @media(max-width:820px){.editorial{grid-template-columns:1fr;gap:36px}}
-  .editorial h2{font-size:1.8rem;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--espresso)}
-  .editorial h3{font-size:1.2rem;margin:28px 0 10px;color:var(--rust)}
-  .editorial p{margin-bottom:14px;color:#4A3A2E}
-  .editorial .drop-cap::first-letter{font-family:'Fraunces',serif;font-size:3.4rem;font-weight:900;float:left;line-height:.85;padding-right:10px;padding-top:4px;color:var(--rust)}
-  .pull-quote{font-family:'Fraunces',serif;font-size:1.35rem;line-height:1.4;color:var(--coffee);margin:28px 0;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .pull-quote cite{display:block;font-family:'DM Sans',sans-serif;font-size:.85rem;color:var(--muted);margin-top:10px;font-style:normal}
+  /* ---------- section scaffolding ---------- */
+  section{padding:72px 0}
+  .sec-head{margin-bottom:40px}
+  .sec-head h2{font-size:clamp(2.2rem,6vw,3.8rem);text-transform:uppercase}
+  .sec-head h2 em{font-style:normal;color:var(--tang)}
+  .sec-head p{font-size:1.1rem;color:var(--ink-soft);max-width:640px;margin-top:14px;line-height:1.55}
 
-  /* Sidebar */
-  .sidebar{font-size:.95rem}
-  .sidebar .box{background:var(--paper);border:1px solid var(--line);padding:24px;margin-bottom:24px}
-  .sidebar .box h3{font-size:1.05rem;margin-bottom:12px;color:var(--espresso);border:none;padding:0}
-  .sidebar .box p{margin-bottom:8px;color:#4A3A2E;font-size:.92rem}
-  .sidebar .box .big{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;color:var(--espresso)}
-  .sidebar .hours-row{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dotted var(--line);font-size:.92rem}
-  .sidebar .hours-row:last-child{border-bottom:none}
-  .btn{display:inline-block;background:var(--rust);color:#fff;padding:12px 28px;font-weight:700;font-size:.95rem;border-radius:2px;transition:.15s;margin-top:8px}
-  .btn:hover{background:var(--rust-dark)}
-  .btn-dark{background:var(--espresso)}
-  .btn-dark:hover{background:var(--coffee)}
+  /* ---------- menu ---------- */
+  .menu-sec{background:var(--cream)}
+  .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+  @media(max-width:820px){.menu-grid{grid-template-columns:1fr;gap:40px}}
+  .menu-group h3{font-size:1.55rem;margin-bottom:6px}
+  .menu-group .group-note{color:#6B6156;font-size:.95rem;margin-bottom:20px;font-style:italic}
+  .menu-item{padding:13px 0;border-bottom:1px solid var(--line)}
+  .menu-item:first-of-type{border-top:1px solid var(--line)}
+  .menu-item .row{display:flex;align-items:baseline;gap:10px}
+  .menu-item .name{font-weight:700;font-size:1.06rem;line-height:1.3}
+  .menu-item .name .tag{display:inline-block;background:var(--tang);color:#fff;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:100px;margin-left:7px;vertical-align:2px;white-space:nowrap}
+  .menu-item .name .tag.sage{background:var(--sage-deep)}
+  .menu-item .dots{flex:1;border-bottom:2px dotted #C9B99E;transform:translateY(-4px);min-width:18px}
+  .menu-item .price{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.15rem;white-space:nowrap}
+  .menu-item .desc{font-size:.92rem;color:#6B6156;margin-top:3px;line-height:1.45}
+  .menu-foot{margin-top:34px;font-size:.95rem;color:#6B6156}
+  .menu-foot a{color:var(--tang);font-weight:700;text-decoration:underline;text-underline-offset:3px}
 
-  /* Menu board */
-  .menu-section{padding:56px 0;border-top:2px solid var(--espresso)}
-  .menu-section h2{font-size:2rem;text-align:center;margin-bottom:6px}
-  .menu-section .menu-sub{text-align:center;color:var(--muted);margin-bottom:40px;font-size:1rem}
-  .menu-columns{display:grid;grid-template-columns:1fr 1fr;gap:48px}
-  @media(max-width:760px){.menu-columns{grid-template-columns:1fr}}
-  .menu-group h3{font-size:1.3rem;color:var(--rust);margin-bottom:4px;padding-bottom:8px;border-bottom:1px solid var(--line)}
-  .menu-group .group-note{font-size:.88rem;color:var(--muted);font-style:italic;margin-bottom:18px}
-  .menu-item{display:flex;align-items:baseline;gap:8px;padding:10px 0;border-bottom:1px dotted var(--line)}
-  .menu-item:last-child{border-bottom:none}
-  .menu-item .item-name{font-weight:700;font-size:1rem;white-space:nowrap}
-  .menu-item .item-name .star{color:var(--rust);font-size:.8rem}
-  .menu-item .dots{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-4px);min-width:20px}
-  .menu-item .item-price{font-weight:700;font-size:1rem;color:var(--espresso);white-space:nowrap}
-  .menu-item .item-desc{font-size:.88rem;color:var(--muted);margin-top:2px}
-  .menu-item-wrap{margin-bottom:4px}
-  .menu-note{text-align:center;margin-top:32px;color:var(--muted);font-size:.95rem;font-style:italic}
+  /* underrated strip */
+  .underrated{margin-top:52px;background:var(--ink);color:var(--cream);border-radius:20px;padding:34px 30px;display:grid;grid-template-columns:1fr 1.4fr;gap:32px;align-items:center}
+  @media(max-width:820px){.underrated{grid-template-columns:1fr;padding:28px 22px}}
+  .underrated h3{font-size:clamp(1.5rem,3.4vw,2rem);line-height:1.05}
+  .underrated h3 span{color:var(--tang)}
+  .underrated p{color:#D8CBB6;margin-top:10px;font-size:.98rem}
+  .underrated .ratings{display:flex;flex-direction:column;gap:0}
+  .underrated .rating{display:flex;align-items:baseline;gap:12px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+  .underrated .rating:last-child{border-bottom:none}
+  .underrated .rating .score{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.6rem;color:var(--tang);min-width:62px}
+  .underrated .rating .r-name{font-weight:700;font-size:1.02rem}
+  .underrated .rating .r-note{color:#B8AB96;font-size:.88rem}
 
-  /* Photo strip */
-  .photo-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:0 0 48px}
-  @media(max-width:700px){.photo-strip{grid-template-columns:1fr}}
-  .photo-strip img{width:100%;height:240px;object-fit:cover;border-radius:4px}
-  .photo-strip figcaption{font-size:.82rem;color:var(--muted);margin-top:6px;font-style:italic}
+  /* ---------- seasonal / drinks of the month ---------- */
+  .seasonal{background:var(--sage-deep);color:var(--cream)}
+  .seasonal .sec-head p{color:#D5DCCB}
+  .seasonal .sec-head h2 em{color:#F5CDBE}
+  .seasonal-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  @media(max-width:820px){.seasonal-grid{grid-template-columns:1fr;gap:32px}}
+  .seasonal-photo{border-radius:20px;overflow:hidden;border:2px solid rgba(255,255,255,.25)}
+  .seasonal-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/4.4}
+  .seasonal-photo figcaption{background:rgba(0,0,0,.35);color:#EDE3D3;font-size:.85rem;padding:10px 16px;font-style:italic}
+  .seasonal-list h3{font-size:1.4rem;margin-bottom:4px;color:#F5CDBE}
+  .seasonal-list .season-note{color:#C9D2BC;font-size:.95rem;margin-bottom:22px}
+  .season-drink{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+  .season-drink:first-of-type{border-top:1px solid rgba(255,255,255,.18)}
+  .season-drink .d-name{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.2rem}
+  .season-drink .d-name .dotm{display:inline-block;background:var(--tang);color:#fff;font-family:'Instrument Sans',sans-serif;font-size:.64rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:100px;margin-left:8px;vertical-align:3px}
+  .season-drink p{color:#D5DCCB;font-size:.95rem;margin-top:3px}
+  .seasonal .insta-note{margin-top:26px;font-size:.95rem;color:#C9D2BC}
+  .seasonal .insta-note a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px}
 
-  /* Locations */
-  .locations{padding:56px 0;border-top:2px solid var(--espresso)}
-  .locations h2{font-size:2rem;text-align:center;margin-bottom:36px}
-  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
-  @media(max-width:760px){.loc-grid{grid-template-columns:1fr}}
-  .loc h3{font-size:1.4rem;margin-bottom:4px}
-  .loc .loc-tag{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--rust);margin-bottom:10px}
-  .loc p{color:#4A3A2E;margin-bottom:6px}
-  .loc .loc-hours{margin:14px 0;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .loc .loc-hours div{display:flex;justify-content:space-between;padding:3px 0;font-size:.95rem}
-  .loc a.map-link{color:var(--rust);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+  /* ---------- story ---------- */
+  .story-sec{background:var(--cream)}
+  .story-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:52px;align-items:center}
+  @media(max-width:820px){.story-grid{grid-template-columns:1fr;gap:32px}}
+  .story-copy h2{font-size:clamp(2.2rem,5.5vw,3.4rem);text-transform:uppercase;margin-bottom:20px}
+  .story-copy h2 em{font-style:normal;color:var(--tang)}
+  .story-copy p{font-size:1.08rem;color:var(--ink-soft);margin-bottom:16px;line-height:1.65}
+  .story-copy p strong{color:var(--ink)}
+  .story-copy .big-line{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.45rem;line-height:1.25;color:var(--ink);margin:26px 0;padding-left:18px;border-left:4px solid var(--tang)}
+  .story-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .story-photos figure{border-radius:16px;overflow:hidden}
+  .story-photos figure:first-child{grid-column:1/-1}
+  .story-photos img{width:100%;height:100%;object-fit:cover}
+  .story-photos figure:first-child img{aspect-ratio:16/9}
+  .story-photos figure:not(:first-child) img{aspect-ratio:1/1}
+  .story-photos figcaption{font-size:.82rem;color:#6B6156;font-style:italic;margin-top:6px}
 
-  /* Events */
-  .events{padding:56px 0;border-top:2px solid var(--espresso);display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-  @media(max-width:760px){.events{grid-template-columns:1fr}}
-  .events img{width:100%;height:320px;object-fit:cover;border-radius:4px}
-  .events h2{font-size:1.8rem;margin-bottom:14px}
-  .events p{color:#4A3A2E;margin-bottom:12px}
-  .events ul{list-style:none;margin:16px 0}
-  .events li{padding:5px 0;color:#4A3A2E}
-  .events li::before{content:"— ";color:var(--rust);font-weight:700}
+  /* ---------- community ---------- */
+  .community{background:var(--ink);color:var(--cream)}
+  .community .sec-head p{color:#CFC3AF}
+  .community .sec-head h2 em{color:var(--tang)}
+  .video-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:44px}
+  @media(max-width:820px){.video-tiles{grid-template-columns:1fr}}
+  .video-tile{position:relative;border-radius:18px;overflow:hidden;display:block;border:2px solid rgba(255,255,255,.14)}
+  .video-tile img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .3s}
+  .video-tile:hover img{transform:scale(1.04)}
+  .video-tile .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(228,87,46,.92);display:flex;align-items:center;justify-content:center;pointer-events:none}
+  .video-tile .play::after{content:"";border-left:22px solid #fff;border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:5px}
+  .video-tile .v-cap{position:absolute;left:0;right:0;bottom:0;padding:36px 16px 14px;background:linear-gradient(to top,rgba(0,0,0,.82),transparent)}
+  .video-tile .v-cap strong{display:block;font-size:1.02rem;line-height:1.25}
+  .video-tile .v-cap span{font-size:.84rem;color:#D8CBB6}
+  .event-list{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+  @media(max-width:820px){.event-list{grid-template-columns:1fr}}
+  .event-list h3{font-size:1.3rem;color:#F5CDBE;margin-bottom:6px;grid-column:1/-1}
+  .event{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.14);align-items:baseline}
+  .event .e-when{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;color:var(--tang);white-space:nowrap;font-size:.95rem;min-width:96px}
+  .event .e-what strong{display:block;font-size:1rem}
+  .event .e-what span{font-size:.9rem;color:#B8AB96}
 
-  /* Reviews */
-  .reviews{padding:56px 0;border-top:2px solid var(--espresso)}
-  .reviews h2{font-size:2rem;text-align:center;margin-bottom:36px}
-  .review-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-  @media(max-width:700px){.review-grid{grid-template-columns:1fr}}
-  .review p{font-family:'Fraunces',serif;font-size:1.15rem;line-height:1.5;color:var(--coffee);margin-bottom:10px}
-  .review .who{font-size:.88rem;color:var(--muted)}
-  .review .who strong{color:var(--espresso)}
+  /* ---------- quotes ---------- */
+  .quotes-sec{background:var(--blush)}
+  .quotes-sec .sec-head h2 em{color:var(--tang-deep)}
+  .quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  @media(max-width:820px){.quote-grid{grid-template-columns:1fr}}
+  .quote-grid .quote:first-child{grid-column:1/-1}
+  .quote{background:var(--cream);border:2px solid var(--ink);border-radius:18px;padding:30px 28px;box-shadow:5px 5px 0 var(--ink)}
+  .quote p{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:clamp(1.15rem,2.6vw,1.45rem);line-height:1.3}
+  .quote-grid .quote:first-child p{font-size:clamp(1.4rem,3.4vw,1.9rem)}
+  .quote .who{margin-top:16px;font-size:.92rem;font-weight:700}
+  .quote .who span{display:block;font-weight:500;color:#6B6156;font-size:.85rem}
 
-  /* Bottom CTA */
-  .bottom-cta{text-align:center;padding:56px 0;border-top:2px solid var(--espresso)}
-  .bottom-cta h2{font-size:2rem;margin-bottom:10px}
-  .bottom-cta p{color:var(--muted);margin-bottom:24px}
-  .bottom-cta .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  /* ---------- locations ---------- */
+  .loc-sec{background:var(--cream)}
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:820px){.loc-grid{grid-template-columns:1fr}}
+  .loc{border:2px solid var(--ink);border-radius:20px;overflow:hidden}
+  .loc .loc-top{padding:28px 26px 22px}
+  .loc.plymouth .loc-top{background:var(--sage-soft)}
+  .loc.mcnichols .loc-top{background:#FDE3D8}
+  .loc .loc-tag{font-weight:700;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--tang-deep);margin-bottom:8px}
+  .loc h3{font-size:1.9rem;margin-bottom:12px}
+  .loc address{font-style:normal;font-size:1.05rem;line-height:1.5}
+  .loc .loc-phone{display:inline-block;margin-top:10px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.25rem}
+  .loc .loc-phone:hover{color:var(--tang)}
+  .loc .loc-body{padding:22px 26px 26px}
+  .loc .hours-row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dotted #C9B99E;font-size:.98rem}
+  .loc .hours-row:last-child{border-bottom:none}
+  .loc .loc-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .loc .hiring{margin-top:16px;background:var(--ink);color:var(--cream);border-radius:12px;padding:13px 16px;font-size:.92rem}
+  .loc .hiring strong{color:#F5CDBE}
 
-  /* Footer */
-  footer{background:var(--espresso);color:#C9B8A6;padding:40px 0 28px;font-size:.88rem}
-  footer .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:24px}
+  /* ---------- events / venue ---------- */
+  .venue-sec{background:var(--sage-soft);padding:64px 0}
+  .venue-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+  @media(max-width:820px){.venue-grid{grid-template-columns:1fr}}
+  .venue-grid h2{font-size:clamp(1.9rem,4.6vw,2.8rem);text-transform:uppercase;margin-bottom:14px}
+  .venue-grid p{color:var(--ink-soft);font-size:1.05rem;margin-bottom:12px}
+  .venue-grid ul{list-style:none;margin:16px 0}
+  .venue-grid li{padding:6px 0;font-weight:600}
+  .venue-grid li::before{content:"→ ";color:var(--tang);font-weight:800}
+  .venue-photo{border-radius:18px;overflow:hidden;border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink)}
+  .venue-photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+
+  /* ---------- bottom CTA ---------- */
+  .bottom-cta{background:var(--tang);color:#fff;text-align:center;padding:72px 0}
+  .bottom-cta h2{font-size:clamp(2.4rem,7vw,4.4rem);text-transform:uppercase}
+  .bottom-cta p{font-size:1.12rem;margin:16px auto 28px;max-width:560px;color:#FFE4D9}
+  .bottom-cta .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn-white{background:#fff;color:var(--tang-deep)}
+  .btn-white:hover{background:var(--ink);color:#fff}
+  .btn-outline-w{border:2px solid #fff;color:#fff}
+  .btn-outline-w:hover{background:#fff;color:var(--tang-deep)}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--ink);color:#B8AB96;padding:48px 0 30px;font-size:.9rem}
+  footer .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:28px}
   @media(max-width:700px){footer .foot-grid{grid-template-columns:1fr}}
-  footer h4{color:#fff;margin-bottom:10px;font-size:.95rem;font-family:'DM Sans',sans-serif}
-  footer a{display:block;padding:2px 0}
-  footer a:hover{color:#F0E2D2}
-  .foot-note{border-top:1px solid rgba(255,255,255,.12);padding-top:18px;font-size:.78rem;color:#9A8878;line-height:1.5}
+  footer h4{color:#fff;margin-bottom:12px;font-family:'Bricolage Grotesque',sans-serif;font-size:1.05rem}
+  footer a{display:block;padding:3px 0}
+  footer a:hover{color:#fff}
+  footer .foot-brand{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.4rem;color:#fff;line-height:1.1}
+  footer .foot-brand span{color:var(--tang)}
+  .foot-note{border-top:1px solid rgba(255,255,255,.14);padding-top:20px;font-size:.78rem;line-height:1.6;color:#8A7E6E}
 
-  /* Mobile fixes */
+  /* ---------- mobile polish ---------- */
   @media(max-width:600px){
-    .wrap{padding:0 18px}
-    .masthead h1{font-size:2.2rem}
-    .masthead .sub{font-size:.95rem;padding:0 8px}
-    .masthead nav{gap:18px;font-size:.9rem;padding:12px 0}
-    .strip{font-size:.78rem;padding:8px 12px;line-height:1.5}
-    .hero-photo{padding:16px 16px 0}
-    .hero-photo img{height:260px}
-    .intro{padding:36px 0 12px}
-    .intro h2{font-size:1.5rem}
-    .intro p{font-size:.98rem}
-    .editorial{padding:36px 0;gap:28px}
-    .editorial h2{font-size:1.5rem}
-    .editorial .drop-cap::first-letter{font-size:2.6rem;padding-top:2px}
-    .pull-quote{font-size:1.15rem;margin:20px 0;padding:16px 0}
-    .sidebar .box{padding:18px}
-    .menu-section{padding:40px 0}
-    .menu-section h2{font-size:1.6rem}
-    .menu-columns{gap:32px}
-    .menu-item .item-name{white-space:normal}
-    .menu-item .item-name,.menu-item .item-price{font-size:.95rem}
-    .photo-strip img{height:280px}
-    .locations{padding:40px 0}
-    .locations h2{font-size:1.6rem;margin-bottom:28px}
-    .loc-grid{gap:32px}
-    .events{padding:40px 0;gap:28px}
-    .events img{height:260px}
-    .events h2{font-size:1.5rem}
-    .reviews{padding:40px 0}
-    .reviews h2{font-size:1.6rem;margin-bottom:28px}
-    .review p{font-size:1.05rem}
-    .review-grid{gap:24px}
-    .bottom-cta{padding:40px 0}
-    .bottom-cta h2{font-size:1.6rem}
-    .bottom-cta .cta-row{flex-direction:column;align-items:center}
-    .bottom-cta .btn{width:100%;max-width:280px;text-align:center}
-    footer .foot-grid{gap:24px}
+    section{padding:56px 0}
+    .hero .wrap{padding-top:84px;padding-bottom:44px}
+    .hero-meta{gap:14px;font-size:.86rem}
+    .btn{padding:13px 24px;font-size:.95rem}
+    .underrated{border-radius:16px}
+    .quote{padding:24px 20px;box-shadow:4px 4px 0 var(--ink)}
+    .seasonal-photo img{aspect-ratio:4/3.4}
+    .story-photos figure:first-child img{aspect-ratio:16/10}
   }
 </style>
 </head>
 <body>
 
-<!-- Top strip -->
-<div class="strip">
-  <span id="openDot" class="dot-open"></span><span id="openText">Checking hours…</span> &nbsp;·&nbsp; Two Detroit locations &nbsp;·&nbsp; <a href="https://www.doordash.com" target="_blank" rel="noopener">Order on DoorDash — $0 delivery fee</a>
+<!-- Top bar -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="status"><span id="openDot" class="dot"></span><span id="openText">Checking hours…</span></div>
+    <div class="links">
+      <a href="https://www.hourdetroit.com/best-of-detroit-online-ballot/" target="_blank" rel="noopener">Vote for us: Best Coffeehouse</a>
+      <a href="https://www.doordash.com" target="_blank" rel="noopener">DoorDash, $0 delivery fee</a>
+    </div>
+  </div>
 </div>
 
-<!-- Masthead -->
-<header class="masthead">
+<!-- Header -->
+<header>
   <div class="wrap">
-    <div class="est">Est. 2024 — Detroit, Michigan</div>
-    <h1>Detroit<br><em>Brew-ti-ful</em></h1>
-    <p class="sub"><strong>Family Owned. Female Owned. Black Owned.</strong> Fresh coffee, fresh baked goods, and a place to belong.</p>
+    <a class="brand" href="#">
+      <img src="images/logo-v2.png" alt="Detroit Brew-ti-ful Coffee House logo">
+      <span class="brand-name">Detroit Brew-ti-ful<span>Coffee House</span></span>
+    </a>
     <nav>
       <a href="#menu">Menu</a>
+      <a href="#seasonal">This Season</a>
       <a href="#story">Our Story</a>
+      <a href="#community">Community</a>
       <a href="#locations">Locations</a>
-      <a href="#events">Events</a>
-      <a href="#reviews">Reviews</a>
-      <a href="https://www.doordash.com" target="_blank" rel="noopener" class="cta">Order on DoorDash →</a>
+      <a class="nav-cta" href="https://www.doordash.com" target="_blank" rel="noopener">Order Ahead</a>
     </nav>
   </div>
 </header>
 
-<!-- Hero photo -->
-<figure class="hero-photo">
-  <img src="images/coffee-pour.jpg" alt="Inside a warm, welcoming coffee house">
-  <figcaption>Freshly brewed, poured with care. Both locations open Mon–Sat.</figcaption>
-</figure>
-
-<!-- Intro -->
-<div class="wrap intro">
-  <h2>More than a coffee shop.</h2>
-  <p>We're a mother-daughter team serving Detroit's west side. Every drink is made fresh. Every pastry is baked that morning. Every person who walks through the door is family.</p>
-</div>
-
-<!-- Editorial: story + sidebar -->
-<div class="wrap editorial" id="story">
-  <div>
-    <h2>Our Story</h2>
-    <p class="drop-cap">Detroit Brew-ti-ful started with a simple idea: a coffee house where neighbors could gather, where the drinks are made with care, and where everybody knows your name.</p>
-    <p>Beverly Beal Sr. has run businesses in Detroit for decades. Her daughter, Beverly Beal Jr., is an attorney and entrepreneur who wanted to build something alongside her mother — something that reflected their family's connection to this city.</p>
-    <p>They opened the first shop on Plymouth Road. The community showed up. Regulars became friends. Friends became family. And in March 2026, they opened a second location on McNichols Road to serve even more of Detroit's west side.</p>
-
-    <div class="pull-quote">
-      "More than just a place to grab a cup of joe — it's a haven for those who appreciate the artistry and craftsmanship behind every brew."
-      <cite>— The Brew-ti-ful philosophy</cite>
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-img"><img src="images/coffee-pour-v2.jpg" alt="Coffee being poured fresh at Detroit Brew-ti-ful"></div>
+  <div class="wrap">
+    <p class="eyebrow">Family owned · Female owned · Black owned · Detroit</p>
+    <h1>Brew-<span class="tang">ti</span>-ful<span class="outline">Coffee House</span></h1>
+    <p class="lede">A mother and daughter, two coffee houses, and a room full of neighbors. <strong>Your mood changes. Your drink can too.</strong> We have got your order waiting.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-tang" href="#menu">See what is good</a>
+      <a class="btn btn-ghost" href="#locations">Find your location</a>
     </div>
-
-    <h3>What makes us different</h3>
-    <p>We source beans from sustainable and ethical suppliers. Our baristas are trained to craft every cup to perfection. But what really sets us apart is the room itself — cozy seating, warm light, neighbors chatting, kids doing homework, creatives working on their next thing.</p>
-    <p>This is a third place. Not home, not work — somewhere in between, where you belong.</p>
-    <p>Whether you're meeting a friend for a catch-up, working on your latest project, or just need a quiet moment with a good cup of coffee, our doors are always open to you.</p>
+    <div class="hero-meta">
+      <span><b>2</b> Detroit locations</span>
+      <span><b>Mon–Sat</b> · 7 AM – 6 PM</span>
+      <span><b>@detroitbrewtiful</b> · 8,700+ neighbors</span>
+    </div>
   </div>
-
-  <aside class="sidebar">
-    <div class="box">
-      <h3>Good to Know</h3>
-      <p class="big">Two locations, same welcome.</p>
-      <p>Both shops serve the full menu, both have cozy seating for working or gathering, and both are open Monday through Saturday.</p>
-      <p><strong>Delivery:</strong> Order on DoorDash with $0 delivery fee.</p>
-      <p><strong>Events:</strong> Both locations available for private events and venue rental.</p>
-      <a class="btn" href="https://www.doordash.com" target="_blank" rel="noopener">Order on DoorDash</a>
-    </div>
-    <div class="box">
-      <h3>Hours — Both Locations</h3>
-      <div class="hours-row"><span>Monday – Friday</span><strong>7 AM – 6 PM</strong></div>
-      <div class="hours-row"><span>Saturday</span><strong>8 AM – 6 PM</strong></div>
-      <div class="hours-row"><span>Sunday</span><strong>Closed</strong></div>
-      <p style="margin-top:12px"><span id="openDot2" class="dot-open" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#7FB069;margin-right:5px"></span><span id="openText2">Checking…</span></p>
-    </div>
-    <div class="box">
-      <h3>Follow Along</h3>
-      <p>New drinks, seasonal specials, event announcements, and behind-the-counter moments.</p>
-      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/detroitbrewtiful" target="_blank" rel="noopener" style="color:var(--rust);font-weight:700">@detroitbrewtiful</a></p>
-      <p style="font-size:.85rem;color:var(--muted)">#DetroitBrewtiful &nbsp; #BrewedInDetroit</p>
-    </div>
-  </aside>
 </div>
 
-<!-- Photo strip -->
-<div class="wrap">
-  <div class="photo-strip">
-    <figure>
-      <img src="images/staff-brewtiful.jpg" alt="A Brewtiful team member making drinks behind the counter">
-      <figcaption>Our team, making your drinks with love.</figcaption>
-    </figure>
-    <figure>
-      <img src="images/shop-sign.jpg" alt="Inside the McNichols location with the B² logo on the wall">
-      <figcaption>The B² sign at the McNichols location.</figcaption>
-    </figure>
-    <figure>
-      <img src="images/coffee-pour.jpg" alt="Coffee being poured fresh">
-      <figcaption>Every cup poured fresh, every time.</figcaption>
-    </figure>
+<!-- Marquee -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Mimi's Pound Cake <i>✦</i></span><span>Fresh Daily <i>✦</i></span><span>Two Locations <i>✦</i></span><span>Drinks of the Month <i>✦</i></span><span>Good Morning Coffee Club <i>✦</i></span><span>Matcha, Lemonades &amp; Boba <i>✦</i></span>
+    <span>Mimi's Pound Cake <i>✦</i></span><span>Fresh Daily <i>✦</i></span><span>Two Locations <i>✦</i></span><span>Drinks of the Month <i>✦</i></span><span>Good Morning Coffee Club <i>✦</i></span><span>Matcha, Lemonades &amp; Boba <i>✦</i></span>
   </div>
 </div>
 
 <!-- Menu -->
-<section class="menu-section" id="menu">
+<section class="menu-sec" id="menu">
   <div class="wrap">
-    <h2>What's Good?</h2>
-    <p class="menu-sub">We're glad you asked — everything on the menu.</p>
+    <div class="sec-head">
+      <h2>What's <em>good?</em></h2>
+      <p>We are glad you asked. Everything on the menu. Baked fresh daily, poured fresh every time, and made with real ingredients, no shortcuts.</p>
+    </div>
 
-    <div class="menu-columns">
+    <div class="menu-grid">
       <div class="menu-group">
         <h3>Coffee &amp; Espresso</h3>
-        <p class="group-note">Made from hand-selected beans, roasted to perfection.</p>
+        <p class="group-note">Hand-selected beans, roasted to perfection.</p>
 
-        <div class="menu-item-wrap">
-          <div class="menu-item">
-            <span class="item-name">Detroit Brewtiful Brewed Coffee <span class="star">★ House Favorite</span></span>
-            <span class="dots"></span>
-            <span class="item-price">$6.50</span>
-          </div>
-          <p class="item-desc">Bold. Smooth. Unapologetically Detroit. Roasted cocoa, toasted caramel, nutty warmth.</p>
+        <div class="menu-item">
+          <div class="row"><span class="name">Detroit Brewtiful Brewed Coffee <span class="tag">House Favorite</span></span><span class="dots"></span><span class="price">$6.50</span></div>
+          <p class="desc">Bold. Smooth. Unapologetically Detroit. Roasted cocoa, toasted caramel, nutty warmth.</p>
         </div>
-
-        <div class="menu-item-wrap">
-          <div class="menu-item">
-            <span class="item-name">Iced Brown Sugar Cinnamon Latte</span>
-            <span class="dots"></span>
-            <span class="item-price">$6.00</span>
-          </div>
-          <p class="item-desc">Sweet, spicy, creamy. Brown sugar and cinnamon folded into smooth espresso and cold milk.</p>
+        <div class="menu-item">
+          <div class="row"><span class="name">Iced Brown Sugar Cinnamon Latte</span><span class="dots"></span><span class="price">$6.00</span></div>
+          <p class="desc">Sweet, spicy, creamy. Brown sugar and cinnamon folded into smooth espresso and cold milk.</p>
         </div>
-
-        <div class="menu-item-wrap">
-          <div class="menu-item">
-            <span class="item-name">Strawberry Matcha Latte</span>
-            <span class="dots"></span>
-            <span class="item-price">$6.50</span>
-          </div>
-          <p class="item-desc">Fresh strawberry meets ceremonial matcha. Sweet, earthy, beautiful in the glass.</p>
+        <div class="menu-item">
+          <div class="row"><span class="name">Strawberry Matcha Latte</span><span class="dots"></span><span class="price">$6.50</span></div>
+          <p class="desc">Fresh strawberry meets ceremonial matcha. Sweet, earthy, beautiful in the glass.</p>
         </div>
-
-        <div class="menu-item-wrap">
-          <div class="menu-item">
-            <span class="item-name">Espresso Drinks</span>
-            <span class="dots"></span>
-            <span class="item-price">$4.50+</span>
-          </div>
-          <p class="item-desc">Lattes, cappuccinos, americanos, macchiatos — ask your barista about today's specials.</p>
+        <div class="menu-item">
+          <div class="row"><span class="name">Espresso Drinks</span><span class="dots"></span><span class="price">$4.50+</span></div>
+          <p class="desc">Lattes, cappuccinos, americanos, macchiatos. Ask your barista about today.</p>
         </div>
       </div>
 
@@ -332,74 +348,41 @@
         <h3>Lemonades, Teas &amp; Smoothies</h3>
         <p class="group-note">House-made, fresh fruit, no shortcuts.</p>
 
-        <div class="menu-item-wrap">
-          <div class="menu-item">
-            <span class="item-name">Lavender Lemonade</span>
-            <span class="dots"></span>
-            <span class="item-price">$5.50</span>
-          </div>
-          <p class="item-desc">Floral, refreshing, house-made. Calming lavender meets bright, tangy lemonade.</p>
+        <div class="menu-item">
+          <div class="row"><span class="name">Lavender Lemonade</span><span class="dots"></span><span class="price">$5.50</span></div>
+          <p class="desc">Floral, refreshing, house-made. Calming lavender meets bright, tangy lemonade.</p>
         </div>
-
-        <div class="menu-item-wrap">
-          <div class="menu-item">
-            <span class="item-name">Shimmer Lemonade</span>
-            <span class="dots"></span>
-            <span class="item-price">$5.50</span>
-          </div>
-          <p class="item-desc">Sparkling, sweet, and shimmering. The drink everyone photographs before they sip.</p>
+        <div class="menu-item">
+          <div class="row"><span class="name">Shimmer Lemonade</span><span class="dots"></span><span class="price">$5.50</span></div>
+          <p class="desc">Sparkling, sweet, and shimmering. The drink everyone photographs before they sip.</p>
         </div>
-
-        <div class="menu-item-wrap">
-          <div class="menu-item">
-            <span class="item-name">Peach Strawberry Smoothie</span>
-            <span class="dots"></span>
-            <span class="item-price">$7.00</span>
-          </div>
-          <p class="item-desc">Fresh fruit blended to perfection. No syrups, just real peaches and strawberries.</p>
+        <div class="menu-item">
+          <div class="row"><span class="name">Peach Strawberry Smoothie</span><span class="dots"></span><span class="price">$7.00</span></div>
+          <p class="desc">Fresh fruit blended to perfection. No syrups, just real peaches and strawberries.</p>
         </div>
-
-        <div class="menu-item-wrap">
-          <div class="menu-item">
-            <span class="item-name">Boba Teas &amp; Frappes</span>
-            <span class="dots"></span>
-            <span class="item-price">$6.00+</span>
-          </div>
-          <p class="item-desc">Monthly specialty drinks, boba teas, and blended frappes. Ask what's new this week.</p>
+        <div class="menu-item">
+          <div class="row"><span class="name">Boba Teas &amp; Frappes</span><span class="dots"></span><span class="price">$6.00+</span></div>
+          <p class="desc">Monthly specialty drinks, boba teas, and blended frappes. Ask what is new this week.</p>
         </div>
       </div>
     </div>
 
-    <div class="menu-columns" style="margin-top:40px">
+    <div class="menu-grid" style="margin-top:52px">
       <div class="menu-group">
         <h3>From the Kitchen</h3>
         <p class="group-note">Baked fresh daily. Family recipes. Real ingredients.</p>
 
-        <div class="menu-item-wrap">
-          <div class="menu-item">
-            <span class="item-name">Chicken Salad Croissant <span class="star">★ Lunch Favorite</span></span>
-            <span class="dots"></span>
-            <span class="item-price">$9.50</span>
-          </div>
-          <p class="item-desc">House-made chicken salad on a flaky, buttery croissant. Made to order.</p>
+        <div class="menu-item">
+          <div class="row"><span class="name">Chicken Salad Croissant <span class="tag sage">Lunch Favorite</span></span><span class="dots"></span><span class="price">$9.50</span></div>
+          <p class="desc">House-made chicken salad on a flaky, buttery croissant. Made to order. Folks call it the best chicken salad sandwich in the city.</p>
         </div>
-
-        <div class="menu-item-wrap">
-          <div class="menu-item">
-            <span class="item-name">Deluxe Croissant</span>
-            <span class="dots"></span>
-            <span class="item-price">$7.00</span>
-          </div>
-          <p class="item-desc">Buttery, flaky, baked fresh daily. The perfect companion to your morning coffee.</p>
+        <div class="menu-item">
+          <div class="row"><span class="name">Deluxe Croissant</span><span class="dots"></span><span class="price">$7.00</span></div>
+          <p class="desc">Buttery, flaky, baked fresh daily. The perfect companion to your morning coffee.</p>
         </div>
-
-        <div class="menu-item-wrap">
-          <div class="menu-item">
-            <span class="item-name">Soup of the Day</span>
-            <span class="dots"></span>
-            <span class="item-price">$6.00</span>
-          </div>
-          <p class="item-desc">Ask your barista what's simmering. Hearty, homemade, always changing with the season.</p>
+        <div class="menu-item">
+          <div class="row"><span class="name">Soup of the Day</span><span class="dots"></span><span class="price">$6.00</span></div>
+          <p class="desc">Ask your barista what is simmering. Hearty, homemade, always changing with the season.</p>
         </div>
       </div>
 
@@ -407,123 +390,266 @@
         <h3>Sweet Endings</h3>
         <p class="group-note">Save room. Trust us.</p>
 
-        <div class="menu-item-wrap">
-          <div class="menu-item">
-            <span class="item-name">Mimi's Pound Cake <span class="star">★ Family Recipe</span></span>
-            <span class="dots"></span>
-            <span class="item-price">$4.50</span>
-          </div>
-          <p class="item-desc">Dense, buttery, perfect. The slice everyone talks about — and comes back for.</p>
+        <div class="menu-item">
+          <div class="row"><span class="name">Mimi's Pound Cake <span class="tag">Family Recipe</span></span><span class="dots"></span><span class="price">$4.50</span></div>
+          <p class="desc">Dense, buttery, perfect. The slice everyone talks about, and the reason half of Detroit plans a second visit before leaving the parking lot.</p>
         </div>
-
-        <div class="menu-item-wrap">
-          <div class="menu-item">
-            <span class="item-name">Cinnamon Roll</span>
-            <span class="dots"></span>
-            <span class="item-price">$4.00</span>
-          </div>
-          <p class="item-desc">Warm, gooey, with cream cheese frosting. Best enjoyed fresh out of the oven.</p>
+        <div class="menu-item">
+          <div class="row"><span class="name">Cinnamon Roll</span><span class="dots"></span><span class="price">$4.00</span></div>
+          <p class="desc">Warm, gooey, with cream cheese frosting. Best enjoyed fresh out of the oven.</p>
         </div>
-
-        <div class="menu-item-wrap">
-          <div class="menu-item">
-            <span class="item-name">B-pops</span>
-            <span class="dots"></span>
-            <span class="item-price">$3.00</span>
-          </div>
-          <p class="item-desc">Cake pops in assorted flavors. A little sweet, a little fun.</p>
+        <div class="menu-item">
+          <div class="row"><span class="name">B-pops</span><span class="dots"></span><span class="price">$3.00</span></div>
+          <p class="desc">Cake pops in assorted flavors. A little sweet, a little fun.</p>
         </div>
       </div>
     </div>
 
-    <p class="menu-note">Full menu available in-store and on DoorDash. Prices may vary by location.</p>
+    <p class="menu-foot">Full menu available in-store and on <a href="https://www.doordash.com" target="_blank" rel="noopener">DoorDash</a>. Prices may vary by location.</p>
+
+    <!-- Underrated drinks, rated by the shop itself on Instagram -->
+    <div class="underrated">
+      <div>
+        <h3>The underrated ones <span>deserve a second chance.</span></h3>
+        <p>Everyone has a favorite. But what about the drinks that do not get enough love? We ranked our most overlooked menu items, and we think they deserve a second chance.</p>
+      </div>
+      <div class="ratings">
+        <div class="rating"><span class="score">8.5</span><div><div class="r-name">Strawberry Frappe</div><div class="r-note">Worth trying when you do not want caffeine in summer.</div></div></div>
+        <div class="rating"><span class="score">8.1</span><div><div class="r-name">Passion Fruit Lemonade</div><div class="r-note">A perfect sweet-and-tart mix. Super refreshing on a hot day.</div></div></div>
+        <div class="rating"><span class="score">7.8</span><div><div class="r-name">Strawberry Matcha with Boba</div><div class="r-note">Sweet strawberry and earthy matcha. An underrated combo.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seasonal / Drinks of the Month -->
+<section class="seasonal" id="seasonal">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>This <em>season</em> at Brewtiful</h2>
+      <p>Every month brings new Drinks of the Month, and every season brings a fresh lineup. Fall just got a whole lot sweeter.</p>
+    </div>
+    <div class="seasonal-grid">
+      <figure class="seasonal-photo">
+        <img src="images/chalkboard-v2.jpg" alt="Hand-drawn chalkboard inside Brewtiful: Spice it Up, Pumpkin Pie Chai and Mango and Peach Refresher">
+        <figcaption>The chalkboard inside the shop. Fall flavors, drawn by hand.</figcaption>
+      </figure>
+      <div class="seasonal-list">
+        <h3>Drinks of the Month</h3>
+        <p class="season-note">Two new drinks every month. October brought these two back, and the regulars went wild.</p>
+        <div class="season-drink">
+          <div class="d-name">Toasted Marshmallow Latte <span class="dotm">Drink of the Month</span></div>
+          <p>Sweet, toasty, fluffy, and dressed up as the cutest little ghosts. Spooky season in a cup.</p>
+        </div>
+        <div class="season-drink">
+          <div class="d-name">Pistachio Salted Caramel Mocha Latte <span class="dotm">Drink of the Month</span></div>
+          <p>Rich mocha, creamy pistachio, and a little salted caramel magic in every sip. This one came back from the dead.</p>
+        </div>
+        <h3 style="margin-top:32px">Fall lineup</h3>
+        <p class="season-note">Here for the season. When they are gone, they are gone.</p>
+        <div class="season-drink">
+          <div class="d-name">Pumpkin Pie Chai</div>
+          <p>With whipped cream and cinnamon. Fall in a cup, straight off the chalkboard.</p>
+        </div>
+        <div class="season-drink">
+          <div class="d-name">Caramel Apple Latte</div>
+          <p>With cold foam. Warm, spiced, caramel-y, and giving fall is almost here.</p>
+        </div>
+        <div class="season-drink">
+          <div class="d-name">Mango &amp; Peach Refresher</div>
+          <p>Bright, fruity, and made fresh. Summer is not quite done with us.</p>
+        </div>
+        <div class="season-drink">
+          <div class="d-name">Cookie Butter &amp; Macadamia Nut Cookie Latte</div>
+          <p>Creamy and made for your fall cravings. Trust us, this one is a must-try.</p>
+        </div>
+        <div class="season-drink">
+          <div class="d-name">Caramel Butter Pecan Frappe</div>
+          <p>Mouth watering just saying it out loud.</p>
+        </div>
+        <p class="insta-note">New drinks drop every month. Follow <a href="https://www.instagram.com/detroitbrewtiful" target="_blank" rel="noopener">@detroitbrewtiful</a> so you never miss one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Story -->
+<section class="story-sec" id="story">
+  <div class="wrap">
+    <div class="story-grid">
+      <div class="story-copy">
+        <h2>A mother. A daughter. <em>Two coffee houses.</em></h2>
+        <p>Beverly Beal Sr. has run businesses in Detroit for decades. Her daughter, Beverly Beal Jr., is an attorney and entrepreneur who wanted to build something alongside her mother, something that reflected their family's connection to this city.</p>
+        <p>So they opened the first shop on Plymouth Road. The community showed up. Regulars became friends. Friends became family. And in March 2026, they opened a second location on McNichols Road to serve even more of Detroit's west side.</p>
+        <p class="big-line">More than just a place to grab a cup of joe. A haven for the artistry behind every brew, and a room where everybody knows your name.</p>
+        <p>We source beans from sustainable and ethical suppliers. Our baristas are trained to craft every cup to perfection. But what really sets us apart is the room itself. Cozy seating, warm light, neighbors chatting, kids doing homework, creatives working on their next thing.</p>
+        <p><strong>This is a third place.</strong> Not home, not work. Somewhere in between, where you belong.</p>
+      </div>
+      <div class="story-photos">
+        <figure>
+          <img src="images/staff-v2.jpg" alt="A Brewtiful team member in a Detroit Brewtiful shirt behind the counter">
+          <figcaption>Our team, making your drinks with love.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/shop-sign-v2.jpg" alt="The illuminated B-squared logo sign inside the McNichols location">
+          <figcaption>The B² sign at the McNichols location.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/matcha-cup-v2.jpg" alt="An iced latte on a wooden table at Brewtiful">
+          <figcaption>A latte? We have got you.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Community -->
+<section class="community" id="community">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>This is what <em>happens here.</em></h2>
+      <p>Brewtiful is not just a coffee shop. It is where Detroit gathers. Workshops, meetups, celebrations, and mornings that turn into friendships. Pull up, network, and tag us in the festivities.</p>
+    </div>
+
+    <div class="video-tiles">
+      <a class="video-tile" href="https://www.instagram.com/reel/DczTTHrxUnF/" target="_blank" rel="noopener">
+        <img src="images/juneteenth-v2.jpg" alt="The Juneteenth Wellness Crawl group posing outside the McNichols Brewtiful location">
+        <span class="play"></span>
+        <span class="v-cap"><strong>Juneteenth Wellness Crawl</strong><span>Watch the recap on Instagram</span></span>
+      </a>
+      <a class="video-tile" href="https://www.instagram.com/p/DcKLcXFkRdm/" target="_blank" rel="noopener">
+        <img src="images/teacher-day-v2.jpg" alt="Inside the Brewtiful cafe during Teacher Appreciation Day">
+        <span class="play"></span>
+        <span class="v-cap"><strong>Teacher Appreciation Day</strong><span>Watch the recap on Instagram</span></span>
+      </a>
+      <a class="video-tile" href="https://www.instagram.com/p/DXXIWDPkYkf/" target="_blank" rel="noopener">
+        <img src="images/social-sipping-v2.jpg" alt="Friends laughing over coffee and matcha at a Brewtiful table">
+        <span class="play"></span>
+        <span class="v-cap"><strong>Social Sipping with Creator Club Detroit</strong><span>Watch the recap on Instagram</span></span>
+      </a>
+    </div>
+
+    <div class="event-list">
+      <h3>Always something going on</h3>
+      <div class="event"><span class="e-when">Saturdays</span><div class="e-what"><strong>Good Morning Coffee Club</strong><span>Coffee, good conversations, and a room full of new connections at McNichols.</span></div></div>
+      <div class="event"><span class="e-when">Monthly</span><div class="e-what"><strong>Social Sipping with Creator Club Detroit</strong><span>Where community meets content and creativity flows freely.</span></div></div>
+      <div class="event"><span class="e-when">Workshops</span><div class="e-what"><strong>Creator 101 Workshop</strong><span>Detroit Creative Community teaches creators how to make scroll-stopping content.</span></div></div>
+      <div class="event"><span class="e-when">Monthly</span><div class="e-what"><strong>Matcha &amp; Tea with The Detroit Girl Society</strong><span>An afternoon centered around sipping, connecting, and getting to know each other.</span></div></div>
+      <div class="event"><span class="e-when">Monthly</span><div class="e-what"><strong>Journaling Circle</strong><span>A little time to slow down, write, reflect, and simply be.</span></div></div>
+      <div class="event"><span class="e-when">Networking</span><div class="e-what"><strong>Purpose in Partnership</strong><span>The Shelby Foundation x Brewtiful. Elevated afternoons of connection and collaboration.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Quotes -->
+<section class="quotes-sec" id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What Detroit <em>says.</em></h2>
+      <p>Real words from real people who pulled up, sipped, and posted about it.</p>
+    </div>
+    <div class="quote-grid">
+      <div class="quote">
+        <p>"Do NOT leave without trying Mimi's pound cake. I'm serious. That alone might have you planning your next visit before you even leave the parking lot."</p>
+        <div class="who">Donny Wilson<span>TikTok · on the McNichols opening</span></div>
+      </div>
+      <div class="quote">
+        <p>"I love Detroit Brew-ti-ful! I enjoy coming in and seeing neighbors and, of course, the owner, Mrs. Beverly."</p>
+        <div class="who">Elle the Foodie<span>Sips in the City</span></div>
+      </div>
+      <div class="quote">
+        <p>"The staff was so sweet to us! The coffee is a def 10/10."</p>
+        <div class="who">Mimi Garcia<span>TikTok</span></div>
+      </div>
+      <div class="quote">
+        <p>"Good coffee. Good energy. Good people."</p>
+        <div class="who">Steve Banks<span>Instagram · Good Morning Coffee Club</span></div>
+      </div>
+      <div class="quote">
+        <p>"They got the best Chicken salad sandwich."</p>
+        <div class="who">@redbone300<span>Instagram</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- Locations -->
-<section class="locations" id="locations">
+<section class="loc-sec" id="locations">
   <div class="wrap">
-    <h2>Two Locations, Same Welcome</h2>
+    <div class="sec-head">
+      <h2>Two locations. <em>Same welcome.</em></h2>
+      <p>Both shops serve the full menu, both have cozy seating for working or gathering, and both are open Monday through Saturday.</p>
+    </div>
     <div class="loc-grid">
-      <div class="loc">
-        <div class="loc-tag">Original Location</div>
-        <h3>Plymouth Road</h3>
-        <p>20438 Plymouth Rd<br>Detroit, MI 48228</p>
-        <p><a href="tel:+13133977667" style="font-weight:700">(313) 397-7667</a></p>
-        <div class="loc-hours">
-          <div><span>Monday – Friday</span><strong>7:00 AM – 6:00 PM</strong></div>
-          <div><span>Saturday</span><strong>8:00 AM – 6:00 PM</strong></div>
-          <div><span>Sunday</span><strong>Closed</strong></div>
+      <div class="loc plymouth">
+        <div class="loc-top">
+          <div class="loc-tag">Original location</div>
+          <h3>Plymouth Road</h3>
+          <address>20438 Plymouth Rd<br>Detroit, MI 48228</address>
+          <a class="loc-phone" href="tel:+13133977667">(313) 397-7667</a>
         </div>
-        <p><a class="map-link" href="https://maps.google.com/?q=20438+Plymouth+Rd+Detroit+MI+48228" target="_blank" rel="noopener">Get directions →</a></p>
+        <div class="loc-body">
+          <div class="hours-row"><span>Monday – Friday</span><strong>7:00 AM – 6:00 PM</strong></div>
+          <div class="hours-row"><span>Saturday</span><strong>8:00 AM – 6:00 PM</strong></div>
+          <div class="hours-row"><span>Sunday</span><strong>Closed</strong></div>
+          <div class="loc-links">
+            <a class="btn btn-tang" href="https://maps.google.com/?q=20438+Plymouth+Rd+Detroit+MI+48228" target="_blank" rel="noopener">Get directions</a>
+          </div>
+        </div>
       </div>
-      <div class="loc">
-        <div class="loc-tag">New Location — Opened March 2026</div>
-        <h3>McNichols Road</h3>
-        <p>14101 W McNichols Rd<br>Detroit, MI</p>
-        <p><a href="tel:+13136464986" style="font-weight:700">(313) 646-4986</a></p>
-        <div class="loc-hours">
-          <div><span>Monday – Friday</span><strong>7:00 AM – 6:00 PM</strong></div>
-          <div><span>Saturday</span><strong>8:00 AM – 6:00 PM</strong></div>
-          <div><span>Sunday</span><strong>Closed</strong></div>
+      <div class="loc mcnichols">
+        <div class="loc-top">
+          <div class="loc-tag">New location · Opened March 2026</div>
+          <h3>McNichols Road</h3>
+          <address>14101 W McNichols Rd<br>Detroit, MI</address>
+          <a class="loc-phone" href="tel:+13136464986">(313) 646-4986</a>
         </div>
-        <p><a class="map-link" href="https://maps.google.com/?q=14101+W+McNichols+Rd+Detroit+MI" target="_blank" rel="noopener">Get directions →</a></p>
+        <div class="loc-body">
+          <div class="hours-row"><span>Monday – Friday</span><strong>7:00 AM – 6:00 PM</strong></div>
+          <div class="hours-row"><span>Saturday</span><strong>8:00 AM – 6:00 PM</strong></div>
+          <div class="hours-row"><span>Sunday</span><strong>Closed</strong></div>
+          <div class="loc-links">
+            <a class="btn btn-tang" href="https://maps.google.com/?q=14101+W+McNichols+Rd+Detroit+MI" target="_blank" rel="noopener">Get directions</a>
+          </div>
+          <div class="hiring"><strong>We are hiring at McNichols.</strong> Reliable, friendly, hardworking, positive, and great with people? Call us.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Events -->
-<section class="events" id="events">
-  <div class="wrap" style="display:contents">
-    <div>
-      <h2>Plan Your Event With Us</h2>
-      <p>Looking for a cozy, welcoming space for your next gathering? Our coffee house is available for private events — with great coffee and food to match.</p>
-      <ul>
-        <li>Business meetings and team gatherings</li>
-        <li>Birthday parties and celebrations</li>
-        <li>Community events and workshops</li>
-        <li>Book clubs, study groups, and more</li>
-      </ul>
-      <p>Whether it's a small meeting or a special occasion, our space is ready to make your event unforgettable.</p>
-      <a class="btn" href="mailto:brewtiful20438@gmail.com?subject=Event%20Booking%20Inquiry">Book Your Event</a>
-    </div>
-    <img src="images/staff-brewtiful.jpg" alt="The Brewtiful team at work">
-  </div>
-</section>
-
-<!-- Reviews -->
-<section class="reviews" id="reviews">
+<!-- Venue -->
+<section class="venue-sec" id="events">
   <div class="wrap">
-    <h2>What Detroit Says</h2>
-    <div class="review-grid">
-      <div class="review">
-        <p>"The Iced Brown Sugar Cinnamon Latte is my daily go-to. The staff knows my order by now, and it always feels like coming home."</p>
-        <div class="who"><strong>Keisha M.</strong> — Regular since 2024</div>
+    <div class="venue-grid">
+      <div>
+        <h2>Plan your event with us</h2>
+        <p>Looking for a cozy, welcoming space for your next gathering? Our coffee house is available for private events, with great coffee and food to match.</p>
+        <ul>
+          <li>Business meetings and team gatherings</li>
+          <li>Birthday parties and celebrations</li>
+          <li>Community events and workshops</li>
+          <li>Book clubs, study groups, and more</li>
+        </ul>
+        <p>Whether it is a small meeting or a special occasion, our space is ready to make your event unforgettable.</p>
+        <a class="btn btn-tang" href="mailto:brewtiful20438@gmail.com?subject=Event%20Booking%20Inquiry">Book your event</a>
       </div>
-      <div class="review">
-        <p>"Mimi's Pound Cake is unreal. Dense, buttery, perfect with a cup of their house brew. I bring friends here just to try it."</p>
-        <div class="who"><strong>Marcus T.</strong> — Plymouth Rd location</div>
-      </div>
-      <div class="review">
-        <p>"Beautiful space, warm people, and the best matcha latte in the city. The new McNichols location is just as welcoming as the original."</p>
-        <div class="who"><strong>Denise R.</strong> — McNichols Rd location</div>
-      </div>
-      <div class="review">
-        <p>"Hosted my daughter's birthday here and the team went above and beyond. Great coffee, great food, great energy."</p>
-        <div class="who"><strong>Angela W.</strong> — Event guest</div>
-      </div>
+      <figure class="venue-photo">
+        <img src="images/storefront-sign-v2.jpg" alt="The Detroit Brew-ti-ful Coffee House storefront sign" style="aspect-ratio:4/3.4">
+      </figure>
     </div>
   </div>
 </section>
 
 <!-- Bottom CTA -->
-<div class="wrap bottom-cta">
-  <h2>Your table is waiting.</h2>
-  <p>Stop by either location, order on DoorDash, or book the space for your next event.</p>
-  <div class="cta-row">
-    <a class="btn" href="#locations">Find Your Location</a>
-    <a class="btn btn-dark" href="https://www.doordash.com" target="_blank" rel="noopener">Order on DoorDash</a>
+<div class="bottom-cta">
+  <div class="wrap">
+    <h2>Your table is waiting.</h2>
+    <p>Stop by either location, order on DoorDash, or book the space for your next event. More color. More flavor. More reasons to pull up.</p>
+    <div class="cta-row">
+      <a class="btn btn-white" href="#locations">Find your location</a>
+      <a class="btn btn-outline-w" href="https://www.doordash.com" target="_blank" rel="noopener">Order on DoorDash</a>
+    </div>
   </div>
 </div>
 
@@ -532,8 +658,9 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <h4>Detroit Brew-ti-ful Coffee House</h4>
-        <p>Family Owned. Female Owned. Black Owned.<br>Freshly brewed coffee, fresh baked goods, and community — in the heart of Detroit.</p>
+        <div class="foot-brand">Detroit <span>Brew-ti-ful</span><br>Coffee House</div>
+        <p style="margin-top:12px">Family Owned. Female Owned. Black Owned.<br>Freshly brewed coffee, fresh baked goods, and community, in the heart of Detroit.</p>
+        <p style="margin-top:12px"><a href="https://www.instagram.com/detroitbrewtiful" target="_blank" rel="noopener" style="display:inline;color:#fff;font-weight:700">@detroitbrewtiful</a> on Instagram</p>
       </div>
       <div>
         <h4>Locations</h4>
@@ -542,14 +669,14 @@
       </div>
       <div>
         <h4>Contact</h4>
-        <a href="tel:+13133977667">(313) 397-7667 — Plymouth</a>
-        <a href="tel:+13136464986">(313) 646-4986 — McNichols</a>
+        <a href="tel:+13133977667">(313) 397-7667, Plymouth</a>
+        <a href="tel:+13136464986">(313) 646-4986, McNichols</a>
         <a href="mailto:brewtiful20438@gmail.com">brewtiful20438@gmail.com</a>
-        <a href="https://www.instagram.com/detroitbrewtiful" target="_blank" rel="noopener">@detroitbrewtiful</a>
+        <a href="https://www.hourdetroit.com/best-of-detroit-online-ballot/" target="_blank" rel="noopener">Vote: Best Coffeehouse</a>
       </div>
     </div>
     <div class="foot-note">
-      <p>Demo redesign by Lexis Sapphire Studio. This is a concept website created to demonstrate a modern redesign. Not affiliated with Detroit Brew-ti-ful Coffee House. Photos from detroitbrewtifulcoffeehouse.com. Menu prices shown are representative and based on publicly listed DoorDash prices.</p>
+      <p>Demo redesign by Lexis Sapphire Studio. This is a concept website created to demonstrate a modern redesign. Not affiliated with Detroit Brew-ti-ful Coffee House. Photos from detroitbrewtifulcoffeehouse.com and @detroitbrewtiful on Instagram. Menu prices shown are representative and based on publicly listed DoorDash prices. Quotes from public TikTok, Instagram, and Substack posts.</p>
     </div>
   </div>
 </footer>
@@ -563,7 +690,7 @@ function getStatus(){
   var mins = now.getHours()*60 + now.getMinutes();
   var open, close;
   if(day === 0){
-    return {open:false, text:"Closed today (Sunday) — opens Monday at 7:00 AM"};
+    return {open:false, text:"Closed today (Sunday). Opens Monday at 7:00 AM"};
   } else if(day === 6){
     open = 8*60; close = 18*60;
   } else {
@@ -572,36 +699,30 @@ function getStatus(){
   if(mins >= open && mins < close){
     var closeH = Math.floor(close/60);
     var closeStr = (closeH > 12 ? closeH-12 : closeH) + ":00 PM";
-    return {open:true, text:"Open now — closes at " + closeStr};
+    return {open:true, text:"Open now. Closes at " + closeStr};
   } else if(mins < open){
     var openH = Math.floor(open/60);
     var openStr = (openH > 12 ? openH-12 : openH) + ":00 AM";
-    return {open:false, text:"Closed — opens today at " + openStr};
+    return {open:false, text:"Closed. Opens today at " + openStr};
   } else {
     var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     var nextDay = days[(day+1)%7];
-    var nextOpen = (day === 5) ? "8:00 AM" : "7:00 AM";
-    if(day === 6) nextOpen = "7:00 AM";
-    return {open:false, text:"Closed — opens " + nextDay + " at " + nextOpen};
+    var nextOpen = "7:00 AM";
+    if(day === 5) nextOpen = "8:00 AM";
+    return {open:false, text:"Closed. Opens " + nextDay + " at " + nextOpen};
   }
 }
-function updatePills(){
+function updatePill(){
   var s = getStatus();
   var dot = document.getElementById("openDot");
   var txt = document.getElementById("openText");
-  var dot2 = document.getElementById("openDot2");
-  var txt2 = document.getElementById("openText2");
   if(dot && txt){
     txt.textContent = s.text;
-    dot.className = s.open ? "dot-open" : "dot-closed";
-  }
-  if(dot2 && txt2){
-    txt2.textContent = s.text;
-    dot2.style.background = s.open ? "#7FB069" : "#D97B6C";
+    dot.className = s.open ? "dot" : "dot closed";
   }
 }
-updatePills();
-setInterval(updatePills, 60000);
+updatePill();
+setInterval(updatePill, 60000);
 </script>
 </body>
 </html>
