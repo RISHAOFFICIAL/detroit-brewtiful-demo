@@ -65,6 +65,8 @@
   .btn{display:inline-block;padding:15px 30px;border-radius:100px;font-weight:700;font-size:1rem;transition:.15s}
   .btn-tang{background:var(--tang);color:#fff}
   .btn-tang:hover{background:var(--tang-deep)}
+  .btn-outline{border:2px solid var(--ink);color:var(--ink)}
+  .btn-outline:hover{background:var(--ink);color:var(--cream)}
   .btn-ghost{border:2px solid var(--cream);color:var(--cream)}
   .btn-ghost:hover{background:var(--cream);color:var(--ink)}
   .hero-meta{display:flex;gap:26px;flex-wrap:wrap;margin-top:36px;font-size:.92rem;font-weight:600;color:#D8CBB6}
@@ -147,15 +149,14 @@
   .story-photos{display:grid;grid-template-columns:1fr;gap:14px}
   .story-photos figure{border-radius:16px;overflow:hidden}
   .story-photos img{width:100%;height:100%;object-fit:cover}
-  .story-photos figure:first-child img{aspect-ratio:16/9}
-  .story-photos figure:not(:first-child) img{aspect-ratio:16/9}
+  .story-photos img{aspect-ratio:4/3}
   .story-photos figcaption{font-size:.82rem;color:#6B6156;font-style:italic;margin-top:6px}
 
   /* ---------- community ---------- */
   .community{background:var(--ink);color:var(--cream)}
   .community .sec-head p{color:#CFC3AF}
   .community .sec-head h2 em{color:var(--tang)}
-  .video-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:44px}
+  .video-tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:44px}
   @media(max-width:820px){.video-tiles{grid-template-columns:1fr}}
   .video-tile{position:relative;border-radius:18px;overflow:hidden;display:block;border:2px solid rgba(255,255,255,.14)}
   .video-tile img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .3s}
@@ -215,7 +216,7 @@
   .venue-grid li{padding:6px 0;font-weight:600}
   .venue-grid li::before{content:"→ ";color:var(--tang);font-weight:800}
   .venue-photo{border-radius:18px;overflow:hidden;border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink)}
-  .venue-photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+  .venue-photo img{width:100%;aspect-ratio:4/5;object-fit:cover}
 
   /* ---------- bottom CTA ---------- */
   .bottom-cta{background:var(--tang);color:#fff;text-align:center;padding:72px 0}
@@ -243,13 +244,12 @@
     section{padding:56px 0}
     .hero .wrap{padding-top:84px;padding-bottom:44px}
     .hero-logo{width:92%}
-    .hero-b2{width:76px;right:16px;bottom:24px}
+    .hero-b2{width:64px;right:16px;top:16px;bottom:auto}
     .hero-meta{gap:14px;font-size:.86rem}
     .btn{padding:13px 24px;font-size:.95rem}
     .underrated{border-radius:16px}
     .quote{padding:24px 20px;box-shadow:4px 4px 0 var(--ink)}
     .seasonal-photo img{aspect-ratio:4/3.4}
-    .story-photos figure:first-child img{aspect-ratio:16/10}
   }
 </style>
 </head>
@@ -261,7 +261,7 @@
     <div class="status"><span id="openDot" class="dot"></span><span id="openText">Checking hours…</span></div>
     <div class="links">
       <a href="https://www.hourdetroit.com/best-of-detroit-online-ballot/" target="_blank" rel="noopener">Vote for us: Best Coffeehouse</a>
-      <a href="https://www.doordash.com" target="_blank" rel="noopener">DoorDash, $0 delivery fee</a>
+      <a href="https://www.doordash.com/store/detroit-brew-ti-ful-coffee-house-detroit-28804626/" target="_blank" rel="noopener">DoorDash, $0 delivery fee</a>
     </div>
   </div>
 </div>
@@ -278,7 +278,7 @@
       <a href="#story">Our Story</a>
       <a href="#community">Community</a>
       <a href="#locations">Locations</a>
-      <a class="nav-cta" href="https://www.doordash.com" target="_blank" rel="noopener">Order Ahead</a>
+      <a class="nav-cta" href="https://www.doordash.com/store/detroit-brew-ti-ful-coffee-house-detroit-28804626/" target="_blank" rel="noopener">Order Ahead</a>
     </nav>
   </div>
 </header>
@@ -297,10 +297,10 @@
     </div>
     <div class="hero-meta">
       <span><b>2</b> Detroit locations</span>
-      <span><b>Mon–Sat</b> · 7 AM – 6 PM</span>
+      <span><b>Mon–Fri</b> 7 AM – 6 PM · <b>Sat</b> 8 AM – 6 PM</span>
       <span><b>@detroitbrewtiful</b> · 8,700+ neighbors</span>
     </div>
-    <img class="hero-b2" src="images/b2-mark-v4.jpg" alt="The B-squared mark from the McNichols location wall">
+    <img class="hero-b2" src="images/b2-mark-v5.jpg" alt="The B-squared mark from the McNichols location wall">
   </div>
 </div>
 
@@ -334,12 +334,12 @@
           <p class="desc">Sweet, spicy, creamy. Brown sugar and cinnamon folded into smooth espresso and cold milk.</p>
         </div>
         <div class="menu-item">
-          <div class="row"><span class="name">Strawberry Matcha Latte</span><span class="dots"></span><span class="price">$6.50</span></div>
+          <div class="row"><span class="name">Strawberry Matcha Latte</span><span class="dots"></span><span class="price">$6.00</span></div>
           <p class="desc">Fresh strawberry meets ceremonial matcha. Sweet, earthy, beautiful in the glass.</p>
         </div>
         <div class="menu-item">
-          <div class="row"><span class="name">Espresso Drinks</span><span class="dots"></span><span class="price">$4.50+</span></div>
-          <p class="desc">Lattes, cappuccinos, americanos, macchiatos. Ask your barista about today.</p>
+          <div class="row"><span class="name">Espresso Drinks</span><span class="dots"></span><span class="price">$3.00+</span></div>
+          <p class="desc">Lattes, cappuccinos, americanos, macchiatos. Ask your barista about today's picks.</p>
         </div>
       </div>
 
@@ -356,12 +356,12 @@
           <p class="desc">Sparkling, sweet, and shimmering. The drink everyone photographs before they sip.</p>
         </div>
         <div class="menu-item">
-          <div class="row"><span class="name">Peach Strawberry Smoothie</span><span class="dots"></span><span class="price">$7.00</span></div>
+          <div class="row"><span class="name">Peach Strawberry Smoothie</span><span class="dots"></span><span class="price">$5.50</span></div>
           <p class="desc">Fresh fruit blended to perfection. No syrups, just real peaches and strawberries.</p>
         </div>
         <div class="menu-item">
-          <div class="row"><span class="name">Boba Teas &amp; Frappes</span><span class="dots"></span><span class="price">$6.00+</span></div>
-          <p class="desc">Monthly specialty drinks, boba teas, and blended frappes. Ask what is new this week.</p>
+          <div class="row"><span class="name">Frappes</span><span class="dots"></span><span class="price">$8.50+</span></div>
+          <p class="desc">Blended frappes in rotating flavors. Boba teas also available, ask your barista what is new this week.</p>
         </div>
       </div>
     </div>
@@ -372,11 +372,11 @@
         <p class="group-note">Baked fresh daily. Family recipes. Real ingredients.</p>
 
         <div class="menu-item">
-          <div class="row"><span class="name">Chicken Salad Croissant <span class="tag sage">Lunch Favorite</span></span><span class="dots"></span><span class="price">$9.50</span></div>
+          <div class="row"><span class="name">Chicken Salad Croissant <span class="tag sage">Lunch Favorite</span></span><span class="dots"></span><span class="price">$7.50</span></div>
           <p class="desc">House-made chicken salad on a flaky, buttery croissant. Made to order. Folks call it the best chicken salad sandwich in the city.</p>
         </div>
         <div class="menu-item">
-          <div class="row"><span class="name">Deluxe Croissant</span><span class="dots"></span><span class="price">$7.00</span></div>
+          <div class="row"><span class="name">Deluxe Croissant</span><span class="dots"></span><span class="price">$7.50</span></div>
           <p class="desc">Buttery, flaky, baked fresh daily. The perfect companion to your morning coffee.</p>
         </div>
         <div class="menu-item">
@@ -390,7 +390,7 @@
         <p class="group-note">Save room. Trust us.</p>
 
         <div class="menu-item">
-          <div class="row"><span class="name">Mimi's Pound Cake <span class="tag">Family Recipe</span></span><span class="dots"></span><span class="price">$4.50</span></div>
+          <div class="row"><span class="name">Mimi's Pound Cake <span class="tag">Family Recipe</span></span><span class="dots"></span><span class="price">$7.00</span></div>
           <p class="desc">Dense, buttery, perfect. The slice everyone talks about, and the reason half of Detroit plans a second visit before leaving the parking lot.</p>
         </div>
         <div class="menu-item">
@@ -404,7 +404,7 @@
       </div>
     </div>
 
-    <p class="menu-foot">Full menu available in-store and on <a href="https://www.doordash.com" target="_blank" rel="noopener">DoorDash</a>. Prices may vary by location.</p>
+    <p class="menu-foot">Full menu available in-store and on <a href="https://www.doordash.com/store/detroit-brew-ti-ful-coffee-house-detroit-28804626/" target="_blank" rel="noopener">DoorDash</a>. Prices may vary by location.</p>
 
     <!-- Underrated drinks, rated by the shop itself on Instagram -->
     <div class="underrated">
@@ -464,7 +464,7 @@
         </div>
         <div class="season-drink">
           <div class="d-name">Caramel Butter Pecan Frappe</div>
-          <p>Mouth watering just saying it out loud.</p>
+          <p>Mouth-watering just saying it out loud.</p>
         </div>
         <p class="insta-note">New drinks drop every month. Follow <a href="https://www.instagram.com/detroitbrewtiful" target="_blank" rel="noopener">@detroitbrewtiful</a> so you never miss one.</p>
       </div>
@@ -478,7 +478,7 @@
     <div class="story-grid">
       <div class="story-copy">
         <h2>A mother. A daughter. <em>Two coffee houses.</em></h2>
-        <p>Beverly Beal Sr. has run businesses in Detroit for decades. Her daughter, Beverly Beal Jr., is an attorney and entrepreneur who wanted to build something alongside her mother, something that reflected their family's connection to this city.</p>
+        <p>For decades, Beverly Beal Sr. owned and operated childcare centers in Detroit, employing neighbors and giving families a safe place to leave the children they loved most. Her daughter, Beverly Beal Jr., is an attorney and entrepreneur who wanted to build something alongside her mother, something that reflected their family's connection to this city.</p>
         <p>So they opened the first shop on Plymouth Road. The community showed up. Regulars became friends. Friends became family. And in March 2026, they opened a second location on McNichols Road to serve even more of Detroit's west side.</p>
         <p class="big-line">More than just a place to grab a cup of joe. A haven for the artistry behind every brew, and a room where everybody knows your name.</p>
         <p>We source beans from sustainable and ethical suppliers. Our baristas are trained to craft every cup to perfection. But what really sets us apart is the room itself. Cozy seating, warm light, neighbors chatting, kids doing homework, creatives working on their next thing.</p>
@@ -508,12 +508,12 @@
 
     <div class="video-tiles">
       <a class="video-tile" href="https://www.instagram.com/p/DcKLcXFkRdm/" target="_blank" rel="noopener">
-        <img src="images/teacher-day-v2.jpg" alt="Inside the Brewtiful cafe during Teacher Appreciation Day">
+        <img src="images/teacher-day-v3.jpg" alt="Inside the Brewtiful cafe during Teacher Appreciation Day">
         <span class="play"></span>
         <span class="v-cap"><strong>Teacher Appreciation Day</strong><span>Watch the recap on Instagram</span></span>
       </a>
       <a class="video-tile" href="https://www.instagram.com/p/DXXIWDPkYkf/" target="_blank" rel="noopener">
-        <img src="images/social-sipping-v2.jpg" alt="Friends laughing over coffee and matcha at a Brewtiful table">
+        <img src="images/social-sipping-v3.jpg" alt="Friends laughing over coffee and matcha at a Brewtiful table">
         <span class="play"></span>
         <span class="v-cap"><strong>Social Sipping with Creator Club Detroit</strong><span>Watch the recap on Instagram</span></span>
       </a>
@@ -584,6 +584,7 @@
           <div class="hours-row"><span>Sunday</span><strong>Closed</strong></div>
           <div class="loc-links">
             <a class="btn btn-tang" href="https://maps.google.com/?q=20438+Plymouth+Rd+Detroit+MI+48228" target="_blank" rel="noopener">Get directions</a>
+            <a class="btn btn-outline" href="https://www.doordash.com/store/detroit-brew-ti-ful-coffee-house-detroit-28804626/" target="_blank" rel="noopener">Order on DoorDash</a>
           </div>
         </div>
       </div>
@@ -591,7 +592,7 @@
         <div class="loc-top">
           <div class="loc-tag">New location · Opened March 2026</div>
           <h3>McNichols Road</h3>
-          <address>14101 W McNichols Rd<br>Detroit, MI</address>
+          <address>14101 W McNichols Rd<br>Detroit, MI 48235</address>
           <a class="loc-phone" href="tel:+13136464986">(313) 646-4986</a>
         </div>
         <div class="loc-body">
@@ -599,7 +600,8 @@
           <div class="hours-row"><span>Saturday</span><strong>8:00 AM – 6:00 PM</strong></div>
           <div class="hours-row"><span>Sunday</span><strong>Closed</strong></div>
           <div class="loc-links">
-            <a class="btn btn-tang" href="https://maps.google.com/?q=14101+W+McNichols+Rd+Detroit+MI" target="_blank" rel="noopener">Get directions</a>
+            <a class="btn btn-tang" href="https://maps.google.com/?q=14101+W+McNichols+Rd+Detroit+MI+48235" target="_blank" rel="noopener">Get directions</a>
+            <a class="btn btn-outline" href="https://www.doordash.com/sdl/store/Detroit-Brew-ti-ful-Coffee-House-Detroit-46421719/" target="_blank" rel="noopener">Order on DoorDash</a>
           </div>
           <div class="hiring"><strong>We are hiring at McNichols.</strong> Reliable, friendly, hardworking, positive, and great with people? Call us.</div>
         </div>
@@ -625,7 +627,7 @@
         <a class="btn btn-tang" href="mailto:brewtiful20438@gmail.com?subject=Event%20Booking%20Inquiry">Book your event</a>
       </div>
       <figure class="venue-photo">
-        <img src="images/juneteenth-v2.jpg" alt="The Juneteenth Wellness Crawl group outside the McNichols Brewtiful storefront" style="aspect-ratio:4/3.4">
+        <img src="images/juneteenth-v3.jpg" alt="The Juneteenth Wellness Crawl group outside the McNichols Brewtiful storefront">
       </figure>
     </div>
   </div>
@@ -638,7 +640,7 @@
     <p>Stop by either location, order on DoorDash, or book the space for your next event. More color. More flavor. More reasons to pull up.</p>
     <div class="cta-row">
       <a class="btn btn-white" href="#locations">Find your location</a>
-      <a class="btn btn-outline-w" href="https://www.doordash.com" target="_blank" rel="noopener">Order on DoorDash</a>
+      <a class="btn btn-outline-w" href="https://www.doordash.com/store/detroit-brew-ti-ful-coffee-house-detroit-28804626/" target="_blank" rel="noopener">Order on DoorDash</a>
     </div>
   </div>
 </div>
@@ -655,7 +657,7 @@
       <div>
         <h4>Locations</h4>
         <a href="https://maps.google.com/?q=20438+Plymouth+Rd+Detroit+MI+48228" target="_blank" rel="noopener">20438 Plymouth Rd, Detroit, MI 48228</a>
-        <a href="https://maps.google.com/?q=14101+W+McNichols+Rd+Detroit+MI" target="_blank" rel="noopener">14101 W McNichols Rd, Detroit, MI</a>
+        <a href="https://maps.google.com/?q=14101+W+McNichols+Rd+Detroit+MI+48235" target="_blank" rel="noopener">14101 W McNichols Rd, Detroit, MI 48235</a>
       </div>
       <div>
         <h4>Contact</h4>
@@ -666,7 +668,7 @@
       </div>
     </div>
     <div class="foot-note">
-      <p>Demo redesign by Lexis Sapphire Studio. This is a concept website created to demonstrate a modern redesign. Not affiliated with Detroit Brew-ti-ful Coffee House. Photos from detroitbrewtifulcoffeehouse.com and @detroitbrewtiful on Instagram. Menu prices shown are representative and based on publicly listed DoorDash prices. Quotes from public TikTok, Instagram, and Substack posts.</p>
+      <p>Demo redesign by Lexis Sapphire Studio. This is a concept website created to demonstrate a modern redesign. Not affiliated with Detroit Brew-ti-ful Coffee House. Photos from detroitbrewtifulcoffeehouse.com and @detroitbrewtiful on Instagram. Menu prices verified from publicly listed DoorDash prices. Quotes from public TikTok, Instagram, and Substack posts.</p>
     </div>
   </div>
 </footer>
@@ -699,6 +701,7 @@ function getStatus(){
     var nextDay = days[(day+1)%7];
     var nextOpen = "7:00 AM";
     if(day === 5) nextOpen = "8:00 AM";
+    if(day === 6){ nextDay = "Monday"; nextOpen = "7:00 AM"; }
     return {open:false, text:"Closed. Opens " + nextDay + " at " + nextOpen};
   }
 }
